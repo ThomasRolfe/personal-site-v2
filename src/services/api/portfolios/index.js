@@ -1,0 +1,1 @@
+export { GetPortfolioPosts } from "./GetPortfolioPosts";
