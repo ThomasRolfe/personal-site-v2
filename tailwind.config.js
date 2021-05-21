@@ -13,7 +13,7 @@ module.exports = {
                 // },
                 brand: {
                     light: "",
-                    DEFAULT: "#2CDFCD",
+                    DEFAULT: "#36E4FF",
                     dark: "",
                 },
                 contrast: {
@@ -26,7 +26,7 @@ module.exports = {
                 current: "currentColor",
             },
             fontFamily: {
-                // sans: ["montserrat", "ui-sans-serif", "system-ui"],
+                sans: ["montserrat", "ui-sans-serif", "system-ui"],
             },
         },
     },

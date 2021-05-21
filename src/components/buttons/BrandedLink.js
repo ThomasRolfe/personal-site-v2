@@ -9,6 +9,7 @@ const BrandedLink = (props) => {
             className={props.className}
             onClick={props.onClick}
             disabled={props.disabled}
+            id={props.id}
         >
             {props.children}
         </Link>

@@ -8,17 +8,80 @@
     height: 28px;
     margin-right: 10px;
     width: 5px;
-    background-color: aqua;
+    background: linear-gradient(143deg, #36e4ff 0%, #2cdfcd 100%);
+}
+
+.bg-gradient-primary {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(143deg, #36e4ff 0%, #2cdfcd 100%);
+}
+
+.svg-hover-gradient-primary * {
+    fill: "#4b5563";
+    transition: fill 1s ease;
+}
+
+.svg-hover-gradient-primary:hover * {
+    fill: url(#primaryGradient);
+    transition: all 1s;
+}
+
+.svg-gradient-primary * {
+    fill: url(#primaryGradient);
+}
+
+.svg-gradient-fire * {
+    fill: url(#fireGradient);
+}
+
+.clip-slant-right {
+    clip-path: polygon(0 0, 100% 23%, 100% 100%, 0% 100%);
 }
 
 .button {
-    @apply select-none inline-flex justify-center py-3 px-5 border border-transparent rounded-md text-base font-medium transition;
+    @apply select-none inline-flex justify-center py-2 px-8 border border-transparent rounded-md text-base font-medium transition;
 }
 
 .button-brand {
     @apply text-white bg-brand;
 }
 
+.text-shadow {
+    text-shadow: 0 0 6px #090c3d80;
+}
+
 .button-brand-hollow {
-    @apply text-brand hover:text-white  border-brand  bg-white  hover:bg-brand;
+    @apply text-white hover:text-white  border-brand  bg-transparent  hover:bg-brand border-2;
+}
+
+.bg-stripe-1 {
+    position: absolute;
+    width: 30rem;
+    height: 200vh;
+    transform: rotate(35deg);
+    background: rgb(29, 29, 38);
+    background: linear-gradient(
+        246deg,
+        rgba(29, 29, 38, 1) 0%,
+        rgba(29, 29, 38, 1) 34%,
+        rgba(33, 33, 50, 1) 100%
+    );
+    top: -30rem;
+    left: 10vw;
+}
+
+.bg-stripe-2 {
+    position: absolute;
+    width: 30rem;
+    height: 200vh;
+    transform: rotate(35deg);
+    background: rgb(29, 29, 38);
+    background: linear-gradient(
+        314deg,
+        rgba(29, 29, 38, 1) 0%,
+        rgba(29, 29, 38, 1) 34%,
+        rgba(33, 33, 50, 1) 100%
+    );
+    top: -40rem;
+    right: -5rem;
 }

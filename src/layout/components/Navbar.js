@@ -7,7 +7,7 @@ const navigation = [
 
 export default function Navbar() {
     return (
-        <header className="bg-transparent absolute w-full">
+        <header className="bg-transparent absolute w-full z-10">
             <nav
                 className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8"
                 aria-label="Top"

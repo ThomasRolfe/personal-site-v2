@@ -11,6 +11,10 @@ import ScrollToTop from "./components/helpers/ScrollToTop";
 import { DataContext } from "./context/DataContext";
 import { GetBlogPosts } from "./services/api/blogs";
 import { GetPortfolioPosts } from "./services/api/portfolios";
+import {
+    FireGradient,
+    PrimaryGradient,
+} from "./components/helpers/GradientDefinitions";
 
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
@@ -81,6 +85,8 @@ export default function App() {
 
     return (
         <Router>
+            <FireGradient />
+            <PrimaryGradient />
             <ScrollToTop />
 
             <Switch>
