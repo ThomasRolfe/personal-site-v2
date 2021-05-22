@@ -58,17 +58,13 @@ const routes = [
 ];
 
 export default function App() {
-    const { setPortfolios, setBlogPosts, setTags } = useContext(DataContext);
+    const { setPortfolios, setTags } = useContext(DataContext);
 
     usePageViews();
 
     ReactGA.initialize(trackingId);
 
     useEffect(() => {
-        GetBlogPosts().then((response) => {
-            setBlogPosts(response.data);
-        });
-
         GetPortfolioPosts().then((response) => {
             setPortfolios(response.data);
         });
@@ -81,7 +77,7 @@ export default function App() {
                 }, {})
             );
         });
-    }, [setBlogPosts, setPortfolios, setTags]);
+    }, [setPortfolios, setTags]);
 
     return (
         <Router>
