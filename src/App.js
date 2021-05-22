@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import {
     Switch,
     Route,
     BrowserRouter as Router,
     useLocation,
 } from "react-router-dom";
-import logo from "./logo.svg";
 import ReactGA from "react-ga";
 import ScrollToTop from "./components/helpers/ScrollToTop";
 import { DataContext } from "./context/DataContext";
@@ -20,8 +19,6 @@ import {
 
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
-import Blog from "./pages/blog/Blog";
-import BlogPost from "./pages/blog/BlogPost";
 import Portfolio from "./pages/portfolio/Portfolio";
 import PortfolioPost from "./pages/portfolio/PortfolioPost";
 import Contact from "./pages/contact/Contact";
@@ -40,13 +37,6 @@ function usePageViews() {
 const routes = [
     { routeName: "home", path: "/", component: Home, menu: true },
     { routeName: "about", path: "/about", component: About, menu: true },
-    {
-        routeName: "blogpost",
-        path: "/blog/:slug",
-        component: BlogPost,
-        menu: false,
-    },
-    { routeName: "blog", path: "/blog", component: Blog, menu: true },
     {
         routeName: "portfoliopost",
         path: "/portfolio/:slug",
@@ -91,7 +81,7 @@ export default function App() {
                 }, {})
             );
         });
-    }, []);
+    }, [setBlogPosts, setPortfolios, setTags]);
 
     return (
         <Router>

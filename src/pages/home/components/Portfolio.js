@@ -4,16 +4,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DataContext } from "../../../context/DataContext";
 
-const portfolio = {
-    title: "Tomrolfe.co.uk",
-    path: "https://tomrolfe.co.uk",
-    github: "https://github.com",
-    categories: ["react", "tailwind", "gsap", "wordpress"],
-    shortDescription: `You are here! Every developer needs their own website and so I used this as a testing ground to progress with React in addition to delving into isometric design in Adobe Illustrator.`,
-    id: 1,
-    image: "https://api.thomasrolfe.co.uk/wp-content/uploads/2020/05/coversmall.jpg",
-};
-
 const Portfolio = (props) => {
     const { portfolios, tags } = useContext(DataContext);
 

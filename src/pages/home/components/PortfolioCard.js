@@ -1,7 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
 import BrandedLink from "../../../components/buttons/BrandedLink";
 
 const PortfolioCard = ({ portfolio, tags }) => {
@@ -15,6 +14,7 @@ const PortfolioCard = ({ portfolio, tags }) => {
                         </h3>
                         <a
                             target="_blank"
+                            rel="noopener"
                             className="text-brand hover:text-brand-light hover:underline text-lg inline-block"
                             href={portfolio.site_link}
                         >
@@ -23,7 +23,11 @@ const PortfolioCard = ({ portfolio, tags }) => {
                         {portfolio.github_link ? (
                             <>
                                 <span className="text-white mx-2"> | </span>
-                                <a href={portfolio.github_link} target="_blank">
+                                <a
+                                    href={portfolio.github_link}
+                                    target="_blank"
+                                    rel="noopener"
+                                >
                                     <FontAwesomeIcon
                                         icon={faGithub}
                                         className="text-brand hover:text-brand-light hover:underline cursor-pointer"
@@ -68,6 +72,7 @@ const PortfolioCard = ({ portfolio, tags }) => {
                 </div>
                 <div className="">
                     <img
+                        alt=""
                         className="rounded-lg"
                         src={portfolio.jetpack_featured_media_url}
                     ></img>
