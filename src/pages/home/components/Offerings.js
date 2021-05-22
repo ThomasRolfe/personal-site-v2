@@ -37,7 +37,7 @@ const Offerings = (props) => {
             scrollTrigger: {
                 trigger: element.querySelector("#offeringsContainer"),
                 scrub: true,
-                start: "top-=100px",
+                start: "top",
                 end: "bottom -150%",
                 pin: true,
             },
