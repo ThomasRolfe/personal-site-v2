@@ -11,6 +11,7 @@ const Offerings = (props) => {
                         <span className="text-gradient-primary">every</span>{" "}
                         stage
                     </h2>
+                    <p>Content</p>
                 </div>
             </section>
         </>
