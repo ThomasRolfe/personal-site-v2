@@ -1,0 +1,1 @@
+export { GetTags } from "./GetTags";

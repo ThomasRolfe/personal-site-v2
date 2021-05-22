@@ -17,7 +17,7 @@ export default function Navbar() {
                         <a href="/">
                             <div
                                 id="nav-logo"
-                                className="text-white text-2xl font-bold flex items-center"
+                                className="text-white text-2xl font-bold flex items-center prepend-primary"
                             >
                                 <span>Tom Rolfe</span>
                             </div>

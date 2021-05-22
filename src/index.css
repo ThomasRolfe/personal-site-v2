@@ -6,13 +6,25 @@ body {
     scroll-behavior: smooth;
 }
 
-#nav-logo:before {
+.prepend-primary {
+    position: relative;
+}
+
+.prepend-primary:before {
+    position: absolute;
     content: "";
     display: inline-block;
-    height: 28px;
-    margin-right: 10px;
-    width: 5px;
+    height: 100%;
+    left: -12px;
+    width: 6px;
     background: linear-gradient(143deg, #36e4ff 0%, #2cdfcd 100%);
+}
+
+.huge-icon {
+    @apply text-huge absolute text-gray-100;
+    left: -30px;
+    top: 100px;
+    z-index: -10;
 }
 
 .text-gradient-primary {
@@ -27,6 +39,15 @@ body {
 .bg-gradient-primary {
     background: rgb(2, 0, 36);
     background: linear-gradient(143deg, #36e4ff 0%, #2cdfcd 100%);
+}
+
+.bg-gradient-dark {
+    background: rgb(42, 42, 54);
+    background: linear-gradient(
+        162deg,
+        rgba(42, 42, 54, 1) 0%,
+        rgba(29, 29, 38, 1) 46%
+    );
 }
 
 .svg-hover-gradient-primary * {

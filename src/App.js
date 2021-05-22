@@ -11,6 +11,7 @@ import ScrollToTop from "./components/helpers/ScrollToTop";
 import { DataContext } from "./context/DataContext";
 import { GetBlogPosts } from "./services/api/blogs";
 import { GetPortfolioPosts } from "./services/api/portfolios";
+import { GetTags } from "./services/api/tags";
 import {
     FireGradient,
     GreyGradient,
@@ -67,8 +68,7 @@ const routes = [
 ];
 
 export default function App() {
-    const { portfolios, setPortfolios } = useContext(DataContext);
-    const { blogPosts, setBlogPosts } = useContext(DataContext);
+    const { setPortfolios, setBlogPosts, setTags } = useContext(DataContext);
 
     usePageViews();
 
@@ -81,6 +81,15 @@ export default function App() {
 
         GetPortfolioPosts().then((response) => {
             setPortfolios(response.data);
+        });
+
+        GetTags().then((response) => {
+            setTags(
+                response.data.reduce((obj, item) => {
+                    obj[item.id] = item.name;
+                    return obj;
+                }, {})
+            );
         });
     }, []);
 

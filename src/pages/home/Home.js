@@ -4,11 +4,11 @@ import Hero from "./components/Hero";
 import Offerings from "./components/Offerings";
 import Portfolio from "./components/Portfolio";
 
-const index = (props) => {
+const Home = (props) => {
     return (
         <PublicLayout>
-            <div className="bg-stripe-1 z-5"></div>
-            <div className="bg-stripe-2 z-5"></div>
+            <div className="bg-stripe-1 z-5" id="stripeLeft"></div>
+            <div className="bg-stripe-2 z-5" id="stripeRight"></div>
             <Hero />
             <Offerings />
             <Portfolio />
@@ -16,4 +16,4 @@ const index = (props) => {
     );
 };
 
-export default index;
+export default Home;

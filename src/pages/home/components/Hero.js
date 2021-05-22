@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import BrandedLink from "../../../components/buttons/BrandedLink";
-
 import { gsap } from "gsap";
 import LogoGroup from "./LogoGroup";
 
@@ -28,7 +27,7 @@ const Hero = (props) => {
             y: 10,
             duration: 0.3,
             delay: 0.8,
-            ease: "Power2",
+            // ease: "Power2",
         });
         gsap.from(element.querySelector("#portfolioLink"), {
             autoAlpha: 0,
@@ -36,7 +35,7 @@ const Hero = (props) => {
             y: 10,
             duration: 0.3,
             delay: 0.9,
-            ease: "Power2",
+            // ease: "Power2",
         });
     }, []);
 
@@ -62,7 +61,7 @@ const Hero = (props) => {
                 </p>
                 <div className="mt-12 ">
                     <BrandedLink
-                        to="/portfolio"
+                        to="#what-do-i-do"
                         className="button bg-gradient-primary text-white invisible"
                         id="featuresLink"
                     >

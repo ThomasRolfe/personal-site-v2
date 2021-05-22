@@ -12,7 +12,7 @@ module.exports = {
                 //     dark: "#443ccf",
                 // },
                 brand: {
-                    light: "",
+                    light: "#95eef6",
                     DEFAULT: "#36E4FF",
                     dark: "",
                 },
@@ -24,6 +24,12 @@ module.exports = {
             },
             height: {
                 extrascreen: "120vh",
+            },
+            fontSize: {
+                huge: "55rem",
+            },
+            borderRadius: {
+                xl: "1rem",
             },
         },
     },
