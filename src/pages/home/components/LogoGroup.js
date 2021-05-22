@@ -18,6 +18,22 @@ const LogoGroup = (props) => {
 
     useEffect(() => {
         const element = ref.current;
+
+        gsap.fromTo(
+            element.querySelector("#logoContainer"),
+            {
+                opacity: 0,
+                y: 50,
+            },
+            {
+                opacity: 1,
+                y: 0,
+                autoAlpha: 1,
+                duration: 0.5,
+                delay: 1.5,
+            }
+        );
+
         gsap.fromTo(
             element.querySelector("#laravelIcon"),
             {
@@ -140,51 +156,51 @@ const LogoGroup = (props) => {
     }, []);
 
     return (
-        <div className="absolute bottom-16 mx-auto w-full">
+        <div className="absolute bottom-16 mx-auto w-full" ref={ref}>
             <div
-                className="flex justify-between mx-auto max-w-3xl z-10"
-                ref={ref}
+                className="flex justify-between mx-auto max-w-3xl z-10 invisible"
+                id="logoContainer"
             >
                 <FontAwesomeIcon
                     icon={faLaravel}
-                    className="svg-gradient-primary"
+                    className="svg-hover-gradient-primary"
                     size="3x"
                     id="laravelIcon"
                 />
                 <FontAwesomeIcon
                     icon={faReact}
-                    className="svg-gradient-primary"
+                    className="svg-hover-gradient-primary"
                     size="3x"
                     id="reactIcon"
                 />
                 <FontAwesomeIcon
                     icon={faPhp}
-                    className="svg-gradient-primary"
+                    className="svg-hover-gradient-primary"
                     fill="#000"
                     size="3x"
                     id="phpIcon"
                 />
                 <FontAwesomeIcon
                     icon={faSass}
-                    className="svg-gradient-primary"
+                    className="svg-hover-gradient-primary"
                     size="3x"
                     id="sassIcon"
                 />
                 <FontAwesomeIcon
                     icon={faStripe}
-                    className="svg-gradient-primary"
+                    className="svg-hover-gradient-primary"
                     size="3x"
                     id="stripeIcon"
                 />
                 <FontAwesomeIcon
                     icon={faUikit}
-                    className="svg-gradient-primary"
+                    className="svg-hover-gradient-primary"
                     size="3x"
                     id="uikitIcon"
                 />
                 <FontAwesomeIcon
                     icon={faGitkraken}
-                    className="svg-gradient-primary"
+                    className="svg-hover-gradient-primary"
                     size="3x"
                     id="gitkrakenIcon"
                 />

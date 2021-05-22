@@ -2,6 +2,7 @@ import React from "react";
 import PublicLayout from "../../layout/PublicLayout";
 import Hero from "./components/Hero";
 import Offerings from "./components/Offerings";
+import Portfolio from "./components/Portfolio";
 
 const index = (props) => {
     return (
@@ -10,6 +11,7 @@ const index = (props) => {
             <div className="bg-stripe-2 z-5"></div>
             <Hero />
             <Offerings />
+            <Portfolio />
         </PublicLayout>
     );
 };

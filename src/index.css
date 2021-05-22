@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    scroll-behavior: smooth;
+}
+
 #nav-logo:before {
     content: "";
     display: inline-block;
@@ -11,14 +15,23 @@
     background: linear-gradient(143deg, #36e4ff 0%, #2cdfcd 100%);
 }
 
+.text-gradient-primary {
+    @apply text-transparent bg-clip-text;
+    background-image: linear-gradient(143deg, #36e4ff 0%, #2cdfcd 100%);
+}
+
+/* .text-gradient-primary {
+    
+} */
+
 .bg-gradient-primary {
     background: rgb(2, 0, 36);
     background: linear-gradient(143deg, #36e4ff 0%, #2cdfcd 100%);
 }
 
 .svg-hover-gradient-primary * {
-    fill: "#4b5563";
-    transition: fill 1s ease;
+    fill: url(#greyGradient);
+    transition: all 1s;
 }
 
 .svg-hover-gradient-primary:hover * {
@@ -35,7 +48,7 @@
 }
 
 .clip-slant-right {
-    clip-path: polygon(0 0, 100% 23%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 70%, 100% 100%, 0% 100%);
 }
 
 .button {

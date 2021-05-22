@@ -24,3 +24,14 @@ export const PrimaryGradient = () => {
         </svg>
     );
 };
+
+export const GreyGradient = () => {
+    return (
+        <svg width="0" height="0">
+            <linearGradient id="greyGradient" gradientTransform="rotate(65)">
+                <stop offset="0%" stop-color="#4D4D57" />
+                <stop offset="100%" stop-color="#4D4D57" />
+            </linearGradient>
+        </svg>
+    );
+};

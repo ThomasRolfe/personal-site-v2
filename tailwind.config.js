@@ -16,17 +16,14 @@ module.exports = {
                     DEFAULT: "#36E4FF",
                     dark: "",
                 },
-                contrast: {
-                    DEFAULT: "#0C0A3E",
-                },
-                offblack: {
-                    DEFAULT: "#24265a",
-                },
                 transparent: "transparent",
                 current: "currentColor",
             },
             fontFamily: {
                 sans: ["montserrat", "ui-sans-serif", "system-ui"],
+            },
+            height: {
+                extrascreen: "120vh",
             },
         },
     },

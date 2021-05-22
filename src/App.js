@@ -13,6 +13,7 @@ import { GetBlogPosts } from "./services/api/blogs";
 import { GetPortfolioPosts } from "./services/api/portfolios";
 import {
     FireGradient,
+    GreyGradient,
     PrimaryGradient,
 } from "./components/helpers/GradientDefinitions";
 
@@ -87,6 +88,7 @@ export default function App() {
         <Router>
             <FireGradient />
             <PrimaryGradient />
+            <GreyGradient />
             <ScrollToTop />
 
             <Switch>
