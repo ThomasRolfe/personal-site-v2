@@ -5,7 +5,7 @@ import BrandedLink from "../../../components/buttons/BrandedLink";
 
 const PortfolioCard = ({ portfolio, tags }) => {
     return (
-        <section className="p-24 bg-gradient-dark rounded-xl my-24 portfolioCard invisible">
+        <section className="p-24 bg-gradient-dark rounded-xl mb-24 portfolioCard invisible ">
             <div className="grid grid-cols-2 ">
                 <div className="flex flex-col justify-between">
                     <div>

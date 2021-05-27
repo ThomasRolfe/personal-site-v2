@@ -37,12 +37,30 @@ const Portfolio = (props) => {
                 }
             );
         });
+
+        gsap.fromTo(
+            element.querySelector(".fade-up"),
+            {
+                opacity: 0,
+                y: 70,
+            },
+            {
+                opacity: 1,
+                y: 0,
+                autoAlpha: 1,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: element.querySelector(".fade-up"),
+                    start: "top+=150 bottom",
+                },
+            }
+        );
     }, [portfolios]);
 
     return (
         <section className="min-h-screen" ref={ref}>
             <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full ">
-                <h2 className="text-white text-7xl font-extrabold tracking-wide text-center mt-36">
+                <h2 className="text-white text-7xl font-extrabold tracking-wide text-center my-36 fade-up">
                     Portfolio
                 </h2>
                 {portfolios.map((portfolio, index) => {

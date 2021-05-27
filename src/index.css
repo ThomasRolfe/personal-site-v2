@@ -85,7 +85,7 @@ body {
 }
 
 .button-brand-hollow {
-    @apply text-white hover:text-white  border-brand  bg-transparent  hover:bg-brand border-2;
+    @apply text-white hover:text-dark  border-brand  bg-transparent  hover:bg-brand border-2;
 }
 
 .bg-stripe-1 {

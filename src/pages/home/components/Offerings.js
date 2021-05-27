@@ -19,13 +19,13 @@ const Offerings = (props) => {
             element.querySelector(".fade-up"),
             {
                 opacity: 0,
-                y: 50,
+                y: 70,
             },
             {
                 opacity: 1,
                 y: 0,
                 autoAlpha: 1,
-                duration: 1.5,
+                duration: 2,
                 scrollTrigger: {
                     trigger: element.querySelector(".fade-up"),
                     start: "top+=150 bottom",
@@ -52,8 +52,8 @@ const Offerings = (props) => {
 
             .fromTo(
                 element.querySelector("#specificationIcon"),
-                { opacity: 0, bottom: 50 },
-                { opacity: 1, autoAlpha: 1, bottom: 0, duration: 1.5 }
+                { opacity: 0, top: 100 },
+                { opacity: 1, autoAlpha: 1, top: 0, duration: 10 }
             )
             .fromTo(
                 element.querySelector("#specificationCopy"),
@@ -63,7 +63,7 @@ const Offerings = (props) => {
                 },
                 {
                     x: 0,
-                    duration: 2.5,
+                    duration: 10,
                     opacity: 1,
                     autoAlpha: 1,
                 }
@@ -73,14 +73,14 @@ const Offerings = (props) => {
             .to(element.querySelector("#specificationIcon"), {
                 opacity: 0,
                 autoAlpha: 0,
-                bottom: 50,
-                duration: 1,
+                top: 100,
+                duration: 10,
             })
             .to(element.querySelector("#specificationCopy"), {
                 opacity: 0,
                 autoAlpha: 0,
                 x: 50,
-                duration: 1.5,
+                duration: 10,
             })
             .to(element.querySelector("#specification"), {
                 opacity: 0,
@@ -95,8 +95,8 @@ const Offerings = (props) => {
             })
             .fromTo(
                 element.querySelector("#mockupIcon"),
-                { opacity: 0, bottom: 50 },
-                { opacity: 1, autoAlpha: 1, bottom: 0, duration: 0.5 }
+                { opacity: 0, top: 100 },
+                { opacity: 1, autoAlpha: 1, top: 0, duration: 10 }
             )
             .fromTo(
                 element.querySelector("#mockupCopy"),
@@ -106,7 +106,7 @@ const Offerings = (props) => {
                 },
                 {
                     x: 0,
-                    duration: 2,
+                    duration: 10,
                     opacity: 1,
                     autoAlpha: 1,
                 }
@@ -116,14 +116,14 @@ const Offerings = (props) => {
             .to(element.querySelector("#mockupIcon"), {
                 opacity: 0,
                 autoAlpha: 0,
-                bottom: 50,
-                duration: 0.5,
+                top: 100,
+                duration: 10,
             })
             .to(element.querySelector("#mockupCopy"), {
                 opacity: 0,
                 autoAlpha: 0,
                 x: 50,
-                duration: 0.5,
+                duration: 10,
             })
             .to(element.querySelector("#mockup"), {
                 opacity: 0,
@@ -138,8 +138,8 @@ const Offerings = (props) => {
             })
             .fromTo(
                 element.querySelector("#programmingIcon"),
-                { opacity: 0, bottom: 50 },
-                { opacity: 1, autoAlpha: 1, bottom: 0, duration: 0.5 }
+                { opacity: 0, top: 100 },
+                { opacity: 1, autoAlpha: 1, top: 0, duration: 10 }
             )
             .fromTo(
                 element.querySelector("#programmingCopy"),
@@ -149,7 +149,7 @@ const Offerings = (props) => {
                 },
                 {
                     x: 0,
-                    duration: 2,
+                    duration: 10,
                     opacity: 1,
                     autoAlpha: 1,
                 }
@@ -159,15 +159,14 @@ const Offerings = (props) => {
             .to(element.querySelector("#programmingIcon"), {
                 opacity: 0,
                 autoAlpha: 0,
-                bottom: 50,
-                duration: 0.5,
-                delay: 10,
+                top: 100,
+                duration: 10,
             })
             .to(element.querySelector("#programmingCopy"), {
                 opacity: 0,
                 autoAlpha: 0,
                 x: 50,
-                duration: 0.5,
+                duration: 10,
             })
             .to(element.querySelector("#programming"), {
                 opacity: 0,
@@ -182,8 +181,8 @@ const Offerings = (props) => {
             })
             .fromTo(
                 element.querySelector("#deploymentIcon"),
-                { opacity: 0, bottom: 50 },
-                { opacity: 1, autoAlpha: 1, bottom: 0, duration: 0.5 }
+                { opacity: 0, top: 100 },
+                { opacity: 1, autoAlpha: 1, top: 0, duration: 10 }
             )
             .fromTo(
                 element.querySelector("#deploymentCopy"),
@@ -193,7 +192,7 @@ const Offerings = (props) => {
                 },
                 {
                     x: 0,
-                    duration: 2,
+                    duration: 10,
                     opacity: 1,
                     autoAlpha: 1,
                 }
@@ -222,13 +221,11 @@ const Offerings = (props) => {
                         className="grid grid-cols-5 py-52 px-20 invisible absolute"
                         id="specification"
                     >
-                        <div
-                            className="col-span-2 invisible"
-                            id="specificationIcon"
-                        >
+                        <div className="col-span-2">
                             <FontAwesomeIcon
                                 icon={faClipboardList}
-                                className="huge-icon"
+                                className="huge-icon invisible"
+                                id="specificationIcon"
                             />
                         </div>
                         <div

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const navigation = [
     { name: "About", href: "/about" },
     { name: "Portfolio", href: "/portfolio" },
@@ -13,14 +15,14 @@ export default function Navbar() {
             >
                 <div className="w-full py-6 flex items-center justify-between">
                     <div className="flex w-full justify-between">
-                        <a href="/">
+                        <Link to="/">
                             <div
                                 id="nav-logo"
                                 className="text-white text-2xl font-bold flex items-center prepend-primary"
                             >
                                 <span>Tom Rolfe</span>
                             </div>
-                        </a>
+                        </Link>
                         <div className="hidden ml-10 space-x-8 lg:block">
                             {navigation.map((link) => (
                                 <a
