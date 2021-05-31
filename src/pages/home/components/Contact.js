@@ -38,7 +38,6 @@ const Contact = (props) => {
                 scrollTrigger: {
                     trigger: iconContainer.current.querySelector("li"),
                     start: "bottom+=100px bottom",
-                    markers: true,
                 },
             }
         );
