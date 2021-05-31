@@ -43,24 +43,24 @@ const Contact = (props) => {
             }
         );
 
-        gsap.fromTo(
-            contactFormRef.current.querySelector("form"),
-            {
-                x: "50px",
-                opacity: "0",
-                autoAlpha: 0,
-            },
-            {
-                x: "0px",
-                opacity: "1",
-                autoAlpha: 1,
-                scrollTrigger: {
-                    trigger: contactFormRef.current.querySelector("form"),
-                    start: "bottom+=100px bottom",
-                    markers: true,
-                },
-            }
-        );
+        // gsap.fromTo(
+        //     contactFormRef.current.querySelector("form"),
+        //     {
+        //         x: "50px",
+        //         opacity: "0",
+        //         autoAlpha: 0,
+        //     },
+        //     {
+        //         x: "0px",
+        //         opacity: "1",
+        //         autoAlpha: 1,
+        //         scrollTrigger: {
+        //             trigger: contactFormRef.current.querySelector("form"),
+        //             start: "bottom+=100px bottom",
+        //             markers: true,
+        //         },
+        //     }
+        // );
     }, []);
 
     return (
