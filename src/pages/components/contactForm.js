@@ -44,9 +44,9 @@ const ContactForm = (props) => {
             }}
         >
             <label
-                for="name"
+                htmlFor="name"
                 className="text-gray-500 text-sm block mb-2"
-                autocomplete="name"
+                autoComplete="name"
                 required
             >
                 Name
@@ -59,9 +59,9 @@ const ContactForm = (props) => {
                 onChange={(e) => setName(e.target.value)}
             />
             <label
-                for="email"
+                htmlFor="email"
                 className="text-gray-500 text-sm block mb-2"
-                autocomplete="email"
+                autoComplete="email"
             >
                 Email
             </label>
@@ -72,20 +72,23 @@ const ContactForm = (props) => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
             />
-            <label for="message" className="text-gray-500 text-sm block mb-2">
+            <label
+                htmlFor="message"
+                className="text-gray-500 text-sm block mb-2"
+            >
                 Message
             </label>
             <textarea
                 name="message"
-                className={inputClasses}
+                className={`${inputClasses} resize-none`}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 rows="5"
             />
-            <div className="text-center">
+            <div className="text-center ">
                 <BrandedButton
                     to=""
-                    className="button bg-gradient-primary text-white"
+                    className="button bg-brand text-white hover:text-dark transition"
                     id=""
                 >
                     <span className="text-shadow font-bold">Send message</span>

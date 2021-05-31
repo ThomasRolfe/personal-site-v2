@@ -17,7 +17,7 @@ export const FireGradient = () => {
 export const PrimaryGradient = () => {
     return (
         <svg width="0" height="0">
-            <linearGradient id="primaryGradient" gradientTransform="rotate(65)">
+            <linearGradient id="primaryGradient" gradientTransform="rotate(80)">
                 <stop offset="0%" stop-color="#2CDFCD" />
                 <stop offset="100%" stop-color="#36E4FF" />
             </linearGradient>

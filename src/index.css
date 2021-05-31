@@ -6,6 +6,11 @@ body {
     scroll-behavior: smooth;
 }
 
+::selection {
+    color: white;
+    background: #36e4ff;
+}
+
 .prepend-primary {
     position: relative;
 }
@@ -39,6 +44,7 @@ body {
 .bg-gradient-primary {
     background: rgb(2, 0, 36);
     background: linear-gradient(143deg, #36e4ff 0%, #2cdfcd 100%);
+    transition: all 1s;
 }
 
 .bg-gradient-dark {
@@ -81,7 +87,7 @@ body {
 }
 
 .text-shadow {
-    text-shadow: 0 0 6px #090c3d80;
+    text-shadow: 0 0 6px #090c3d45;
 }
 
 .button-brand-hollow {

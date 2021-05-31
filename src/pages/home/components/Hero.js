@@ -62,7 +62,7 @@ const Hero = (props) => {
                 <div className="mt-12 ">
                     <BrandedLink
                         to="#what-do-i-do"
-                        className="button bg-gradient-primary text-white invisible"
+                        className="button bg-brand text-white invisible hover:text-dark transition"
                         id="featuresLink"
                     >
                         <span className="text-shadow font-bold">
@@ -71,7 +71,7 @@ const Hero = (props) => {
                     </BrandedLink>
                     <BrandedLink
                         to="#"
-                        className="button button-brand-hollow ml-8 font-bold invisible"
+                        className="font-bold button button-brand-hollow ml-8 invisible transition"
                         id="portfolioLink"
                     >
                         Portfolio

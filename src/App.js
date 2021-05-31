@@ -8,7 +8,6 @@ import {
 import ReactGA from "react-ga";
 import ScrollToTop from "./components/helpers/ScrollToTop";
 import { DataContext } from "./context/DataContext";
-import { GetBlogPosts } from "./services/api/blogs";
 import { GetPortfolioPosts } from "./services/api/portfolios";
 import { GetTags } from "./services/api/tags";
 import {
@@ -23,6 +22,7 @@ import Portfolio from "./pages/portfolio/Portfolio";
 import PortfolioPost from "./pages/portfolio/PortfolioPost";
 import Contact from "./pages/contact/Contact";
 import Page404 from "./pages/Page404";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const trackingId = "UA-120633211-4";
 
@@ -67,6 +67,7 @@ export default function App() {
     useEffect(() => {
         GetPortfolioPosts().then((response) => {
             setPortfolios(response.data);
+            ScrollTrigger.refresh();
         });
 
         GetTags().then((response) => {
@@ -76,6 +77,7 @@ export default function App() {
                     return obj;
                 }, {})
             );
+            ScrollTrigger.refresh();
         });
     }, [setPortfolios, setTags]);
 

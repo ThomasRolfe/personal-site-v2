@@ -14,6 +14,7 @@ module.exports = {
                 brand: {
                     light: "#95eef6",
                     DEFAULT: "#36E4FF",
+                    alternate: "#35e3fa",
                     dark: "",
                 },
                 transparent: "transparent",
@@ -39,7 +40,9 @@ module.exports = {
         },
     },
     variants: {
-        extend: {},
+        extend: {
+            translate: ["hover"],
+        },
     },
     plugins: [],
 };
