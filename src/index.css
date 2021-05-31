@@ -119,3 +119,16 @@ body {
     top: -40rem;
     right: -5rem;
 }
+
+.portfolioContainer {
+    perspective: 5000px;
+    max-height: 400px;
+}
+
+.portfolioImageContainer {
+    transform: rotateZ(8deg) translateY(350px);
+}
+
+.portfolioImageContainer img {
+    margin-bottom: 30px;
+}

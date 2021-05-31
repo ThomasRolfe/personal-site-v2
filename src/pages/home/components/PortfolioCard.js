@@ -1,13 +1,39 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import BrandedLink from "../../../components/buttons/BrandedLink";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const PortfolioCard = ({ portfolio, tags }) => {
+    gsap.registerPlugin(ScrollTrigger);
+    const ref = useRef(null);
+
+    useEffect(() => {
+        const element = ref.current;
+        gsap.fromTo(
+            element.querySelector(".portfolioImageContainer"),
+            {
+                // y: "350px",
+            },
+            {
+                y: "-150px",
+                x: "50px",
+                scrollTrigger: {
+                    scrub: 2,
+                    start: "top middle",
+                },
+            }
+        );
+    }, []);
+
     return (
-        <section className="p-24 bg-gradient-dark rounded-xl mb-24 portfolioCard invisible ">
+        <section
+            className="p-24 bg-gradient-dark rounded-xl mb-24 portfolioCard invisible overflow-hidden"
+            ref={ref}
+        >
             <div className="grid grid-cols-2 ">
-                <div className="flex flex-col justify-between">
+                <div className="flex flex-col justify-between z-20">
                     <div>
                         <h3 className="text-white font-bold text-5xl mb-3">
                             {portfolio.title.rendered}
@@ -70,12 +96,19 @@ const PortfolioCard = ({ portfolio, tags }) => {
                         </BrandedLink>
                     </div>
                 </div>
-                <div className="">
-                    <img
-                        alt=""
-                        className="rounded-lg"
-                        src={portfolio.jetpack_featured_media_url}
-                    ></img>
+                <div className="portfolioContainer">
+                    <div className="portfolioImageContainer">
+                        <img
+                            alt=""
+                            className="rounded-lg"
+                            src={portfolio.jetpack_featured_media_url}
+                        ></img>
+                        <img
+                            alt=""
+                            className="rounded-lg"
+                            src={portfolio.jetpack_featured_media_url}
+                        ></img>
+                    </div>
                 </div>
             </div>
         </section>

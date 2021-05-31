@@ -25,6 +25,11 @@ module.exports = {
             height: {
                 extrascreen: "120vh",
             },
+            minHeight: {
+                "1-2-screen": "50vh",
+                "2-3-screen": "66vh",
+                "1-3-screen": "33vh",
+            },
             fontSize: {
                 huge: "55rem",
             },

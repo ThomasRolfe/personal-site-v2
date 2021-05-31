@@ -1,7 +1,8 @@
 import React from "react";
 import PublicLayout from "../../layout/PublicLayout";
 import ContactForm from "../components/contactForm";
-import Contact from "../contact/Contact";
+import Contact from "./components/Contact";
+import Features from "./components/Features";
 import Hero from "./components/Hero";
 import Offerings from "./components/Offerings";
 import Portfolio from "./components/Portfolio";
@@ -14,6 +15,7 @@ const Home = (props) => {
             <Hero />
             <Offerings />
             <Portfolio />
+            <Features />
             <Contact />
         </PublicLayout>
     );
