@@ -40,13 +40,13 @@ const Hero = (props) => {
     }, []);
 
     return (
-        <section className="h-screen flex flex-col justify-center z-10 relative">
+        <section className="min-h-140 h-screen flex flex-col justify-center z-10 relative">
             <div
                 className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full "
                 ref={ref}
             >
                 <h1
-                    className="text-white text-7xl font-extrabold tracking-wide invisible"
+                    className="text-white text-3xl md:text-5xl lg:text-7xl font-extrabold tracking-wide invisible"
                     id="mainHeading"
                 >
                     Full Stack <br />
@@ -59,10 +59,10 @@ const Hero = (props) => {
                     Web app and website development, from planning and design to
                     production and deployment.
                 </p>
-                <div className="mt-12 ">
+                <div className="mt-12 flex flex-wrap sm:block">
                     <BrandedLink
                         to="#what-do-i-do"
-                        className="button bg-brand text-white invisible hover:text-dark transition"
+                        className="button bg-brand text-white invisible hover:text-dark transition w-full sm:w-auto"
                         id="featuresLink"
                     >
                         <span className="text-shadow font-bold">
@@ -71,14 +71,16 @@ const Hero = (props) => {
                     </BrandedLink>
                     <BrandedLink
                         to="#"
-                        className="font-bold button button-brand-hollow ml-8 invisible transition"
+                        className="font-bold button button-brand-hollow mt-8 sm:mt-0 sm:ml-8 invisible transition w-full sm:w-auto"
                         id="portfolioLink"
                     >
                         Portfolio
                     </BrandedLink>
                 </div>
             </div>
-            <LogoGroup />
+            <div className="hidden lg:block">
+                <LogoGroup />
+            </div>
         </section>
     );
 };

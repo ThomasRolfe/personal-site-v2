@@ -18,10 +18,6 @@ const OfferingData = [
             specifications. This process is crucial to
             ensure the right system is built for the right
             business objectives.`,
-            `The more detailed and thorough the
-            specification, the easier the project will be to
-            produce and manage, particularly with multiple
-            people working on the same project.`,
         ],
         icon: faClipboardList,
     },
@@ -162,7 +158,7 @@ const Offerings = (props) => {
         <div ref={ref}>
             <div className="clip-slant-right h-48  bg-white w-full relative z-30"></div>
             <section
-                className="h-screen bg-white z-30 relative pt-12 overflow-hidden"
+                className="h-screen bg-white z-30 relative pt-4 md:pt-12 overflow-hidden"
                 id="offeringsContainer"
             >
                 <div
@@ -170,7 +166,7 @@ const Offerings = (props) => {
                     id="offeringsContainer"
                 >
                     <h2
-                        className="text-black text-7xl font-extrabold tracking-wide text-center fade-up invisible"
+                        className="text-black text-4xl md:text-7xl font-extrabold tracking-wide text-center fade-up invisible"
                         id="what-do-i-do"
                     >
                         Input at{" "}

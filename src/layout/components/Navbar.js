@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from "react";
 
 const navigation = [
     { name: "About", href: "/about" },
@@ -7,10 +10,12 @@ const navigation = [
 ];
 
 export default function Navbar() {
+    const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
     return (
         <header className="bg-transparent absolute w-full z-30">
             <nav
-                className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8"
+                className="max-w-screen-2xl mx-auto px-6 lg:px-8"
                 aria-label="Top"
             >
                 <div className="w-full py-6 flex items-center justify-between">
@@ -23,6 +28,17 @@ export default function Navbar() {
                                 <span>Tom Rolfe</span>
                             </div>
                         </Link>
+                        <div className="lg:hidden">
+                            <FontAwesomeIcon
+                                icon={faBars}
+                                className="text-white hover:scale-110 transform transition"
+                                size="2x"
+                                id=""
+                                onClick={() => {
+                                    setMobileNavOpen(!mobileNavOpen);
+                                }}
+                            />
+                        </div>
                         <div className="hidden ml-10 space-x-8 lg:block">
                             {navigation.map((link) => (
                                 <a
@@ -36,17 +52,19 @@ export default function Navbar() {
                         </div>
                     </div>
                 </div>
-                <div className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
-                    {navigation.map((link) => (
-                        <a
-                            key={link.name}
-                            href={link.href}
-                            className="text-base font-medium text-white hover:text-indigo-50"
-                        >
-                            {link.name}
-                        </a>
-                    ))}
-                </div>
+                {mobileNavOpen && (
+                    <div className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
+                        {navigation.map((link) => (
+                            <a
+                                key={link.name}
+                                href={link.href}
+                                className="text-base font-medium text-white hover:text-indigo-50"
+                            >
+                                {link.name}
+                            </a>
+                        ))}
+                    </div>
+                )}
             </nav>
         </header>
     );

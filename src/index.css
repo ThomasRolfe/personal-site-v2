@@ -25,8 +25,22 @@ body {
     background: linear-gradient(143deg, #36e4ff 0%, #2cdfcd 100%);
 }
 
+.offeringIcon {
+    @apply absolute text-gray-100;
+    left: -30px;
+    top: 100px;
+    z-index: -10;
+}
+
 .huge-icon {
     @apply text-huge absolute text-gray-100;
+    left: -30px;
+    top: 100px;
+    z-index: -10;
+}
+
+.mobile-icon {
+    @apply text-large absolute text-gray-100;
     left: -30px;
     top: 100px;
     z-index: -10;

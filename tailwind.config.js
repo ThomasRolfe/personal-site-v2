@@ -30,8 +30,11 @@ module.exports = {
                 "1-2-screen": "50vh",
                 "2-3-screen": "66vh",
                 "1-3-screen": "33vh",
+                120: "30rem",
+                140: "35rem",
             },
             fontSize: {
+                large: "40rem",
                 huge: "55rem",
             },
             borderRadius: {
