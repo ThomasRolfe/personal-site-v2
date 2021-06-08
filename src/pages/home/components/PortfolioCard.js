@@ -29,26 +29,25 @@ const PortfolioCard = ({ portfolio, tags }) => {
 
     return (
         <section
-            className="p-24 bg-gradient-dark rounded-xl mb-24 portfolioCard invisible overflow-hidden"
+            className="p-4 md:p-12 lg:p-24 bg-gradient-dark rounded-md sm:rounded-xl mb-24 portfolioCard invisible overflow-hidden"
             ref={ref}
         >
             <div className="grid grid-cols-2 ">
-                <div className="flex flex-col justify-between z-20">
+                <div className="flex flex-col justify-between z-20 col-span-2">
                     <div>
-                        <h3 className="text-white font-bold text-5xl mb-3">
+                        <h3 className="text-white font-bold text-xl sm:text-5xl mb-3">
                             {portfolio.title.rendered}
                         </h3>
                         <a
                             target="_blank"
                             rel="noopener"
-                            className="text-brand hover:text-brand-light hover:underline text-lg inline-block"
+                            className="text-brand hover:text-brand-light hover:underline text-sm sm:text-lg inline-block mb-5"
                             href={portfolio.site_link}
                         >
                             {portfolio.site_link}
                         </a>
                         {portfolio.github_link ? (
                             <>
-                                <span className="text-white mx-2"> | </span>
                                 <a
                                     href={portfolio.github_link}
                                     target="_blank"
@@ -56,8 +55,8 @@ const PortfolioCard = ({ portfolio, tags }) => {
                                 >
                                     <FontAwesomeIcon
                                         icon={faGithub}
-                                        className="text-brand hover:text-brand-light hover:underline cursor-pointer"
-                                        size="lg"
+                                        className="text-brand hover:text-brand-light hover:underline cursor-pointer text-md ml-3"
+                                        // size="lg"
                                     />
                                 </a>
                             </>
@@ -65,7 +64,7 @@ const PortfolioCard = ({ portfolio, tags }) => {
                             ""
                         )}
                         {portfolio.tags ? (
-                            <div className="flex gap-2 mt-3">
+                            <div className="flex gap-2 mb-3 flex-wrap">
                                 {portfolio.tags.map((tag, index) => {
                                     return (
                                         <span
@@ -80,14 +79,23 @@ const PortfolioCard = ({ portfolio, tags }) => {
                         ) : (
                             ""
                         )}
+                        <div className="lg:hidden mt-6 text-center">
+                            <div className="flex justify-center">
+                                <img
+                                    alt=""
+                                    className="rounded-md"
+                                    src={portfolio.jetpack_featured_media_url}
+                                ></img>
+                            </div>
+                        </div>
                         <p
-                            className="text-white mt-12 pr-24"
+                            className="text-white mt-8 pr-0 lg:pr-24"
                             dangerouslySetInnerHTML={{
                                 __html: portfolio.excerpt.rendered,
                             }}
                         ></p>
                     </div>
-                    <div>
+                    <div className="text-center">
                         <BrandedLink
                             to={`/portfolio/${portfolio.slug}`}
                             className="button button-brand-hollow mt-12 font-bold"
@@ -96,7 +104,7 @@ const PortfolioCard = ({ portfolio, tags }) => {
                         </BrandedLink>
                     </div>
                 </div>
-                <div className="portfolioContainer">
+                <div className="portfolioContainer hidden lg:visible">
                     <div className="portfolioImageContainer">
                         <img
                             alt=""
@@ -105,7 +113,7 @@ const PortfolioCard = ({ portfolio, tags }) => {
                         ></img>
                         <img
                             alt=""
-                            className="rounded-lg"
+                            className="rounded-lg hidden"
                             src={portfolio.jetpack_featured_media_url}
                         ></img>
                     </div>

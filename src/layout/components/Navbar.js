@@ -19,11 +19,11 @@ export default function Navbar() {
                 aria-label="Top"
             >
                 <div className="w-full py-6 flex items-center justify-between">
-                    <div className="flex w-full justify-between">
+                    <div className="flex w-full justify-between items-center">
                         <Link to="/">
                             <div
                                 id="nav-logo"
-                                className="text-white text-2xl font-bold flex items-center prepend-primary"
+                                className="text-white text-lg sm:text-2xl font-bold flex items-center prepend-primary"
                             >
                                 <span>Tom Rolfe</span>
                             </div>
@@ -31,8 +31,8 @@ export default function Navbar() {
                         <div className="lg:hidden">
                             <FontAwesomeIcon
                                 icon={faBars}
-                                className="text-white hover:scale-110 transform transition"
-                                size="2x"
+                                className="text-white hover:scale-110 transform transition text-xl"
+                                // size="2x"
                                 id=""
                                 onClick={() => {
                                     setMobileNavOpen(!mobileNavOpen);

@@ -162,11 +162,11 @@ const Offerings = (props) => {
                 id="offeringsContainer"
             >
                 <div
-                    className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full"
+                    className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col justify-between"
                     id="offeringsContainer"
                 >
                     <h2
-                        className="text-black text-4xl md:text-7xl font-extrabold tracking-wide text-center fade-up invisible"
+                        className="text-black pt-8 md:pt-0 text-4xl md:text-7xl font-extrabold tracking-wide text-center fade-up invisible absolute"
                         id="what-do-i-do"
                     >
                         Input at{" "}

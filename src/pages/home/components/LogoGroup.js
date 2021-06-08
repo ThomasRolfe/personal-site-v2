@@ -13,152 +13,183 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const LogoGroup = (props) => {
+    // Animate on large screens only
+    const min768 = window.matchMedia("screen and (min-width: 768px)");
+    const min1024 = window.matchMedia("screen and (min-width: 1024px)");
     gsap.registerPlugin(ScrollTrigger);
     const ref = useRef(null);
 
     useEffect(() => {
         const element = ref.current;
 
-        gsap.fromTo(
-            element.querySelector("#logoContainer"),
-            {
-                opacity: 0,
-                y: 50,
-            },
-            {
-                opacity: 1,
-                y: 0,
-                autoAlpha: 1,
-                duration: 0.5,
-                delay: 1.5,
-            }
-        );
+        if (min768.matches) {
+            gsap.fromTo(
+                element.querySelector("#logoContainer"),
+                {
+                    opacity: 0,
+                    y: 50,
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    autoAlpha: 1,
+                    duration: 0.5,
+                    delay: 1.5,
+                }
+            );
 
-        gsap.fromTo(
-            element.querySelector("#laravelIcon"),
-            {
-                opacity: 1,
-                y: 0,
-            },
-            {
-                opacity: 0,
-                y: 280,
-                scrollTrigger: {
-                    trigger: element.querySelector("#laravelIcon"),
-                    start: "top center",
-                    end: "bottom top",
-                    scrub: 1,
+            gsap.fromTo(
+                element.querySelector("#laravelIcon"),
+                {
+                    opacity: 1,
+                    y: 0,
                 },
-            }
-        );
-        gsap.fromTo(
-            element.querySelector("#reactIcon"),
-            {
-                opacity: 1,
-                y: 0,
-            },
-            {
-                opacity: 0,
-                y: 300,
-                scrollTrigger: {
-                    trigger: element.querySelector("#reactIcon"),
-                    start: "top center+=20",
-                    end: "bottom top",
-                    scrub: 1,
+                {
+                    opacity: 0,
+                    y: 280,
+                    scrollTrigger: {
+                        trigger: element.querySelector("#laravelIcon"),
+                        start: `${
+                            min1024.matches ? "top center" : "top center-=20"
+                        }`,
+                        end: "bottom top",
+                        scrub: 1,
+                    },
+                }
+            );
+            gsap.fromTo(
+                element.querySelector("#reactIcon"),
+                {
+                    opacity: 1,
+                    y: 0,
                 },
-            }
-        );
-        gsap.fromTo(
-            element.querySelector("#phpIcon"),
-            {
-                opacity: 1,
-                y: 0,
-            },
-            {
-                opacity: 0,
-                y: 320,
-                scrollTrigger: {
-                    trigger: element.querySelector("#phpIcon"),
-                    start: "top center+=40",
-                    end: "bottom top",
-                    scrub: 1,
+                {
+                    opacity: 0,
+                    y: 300,
+                    scrollTrigger: {
+                        trigger: element.querySelector("#reactIcon"),
+                        start: `${
+                            min1024.matches
+                                ? "top center+=20"
+                                : "top center-=20"
+                        }`,
+                        end: "bottom top",
+                        scrub: 1,
+                    },
+                }
+            );
+            gsap.fromTo(
+                element.querySelector("#phpIcon"),
+                {
+                    opacity: 1,
+                    y: 0,
                 },
-            }
-        );
-        gsap.fromTo(
-            element.querySelector("#sassIcon"),
-            {
-                opacity: 1,
-                y: 0,
-            },
-            {
-                opacity: 0,
-                y: 340,
-                scrollTrigger: {
-                    trigger: element.querySelector("#sassIcon"),
-                    start: "top center+=60",
-                    end: "bottom top",
-                    scrub: 1,
+                {
+                    opacity: 0,
+                    y: 320,
+                    scrollTrigger: {
+                        trigger: element.querySelector("#phpIcon"),
+                        start: `${
+                            min1024.matches
+                                ? "top center+=40"
+                                : "top center-=20"
+                        }`,
+                        end: "bottom top",
+                        scrub: 1,
+                    },
+                }
+            );
+            gsap.fromTo(
+                element.querySelector("#sassIcon"),
+                {
+                    opacity: 1,
+                    y: 0,
                 },
-            }
-        );
-        gsap.fromTo(
-            element.querySelector("#stripeIcon"),
-            {
-                opacity: 1,
-                y: 0,
-            },
-            {
-                opacity: 0,
-                y: 360,
-                scrollTrigger: {
-                    trigger: element.querySelector("#stripeIcon"),
-                    start: "top center+=80",
-                    end: "bottom top",
-                    scrub: 1,
+                {
+                    opacity: 0,
+                    y: 340,
+                    scrollTrigger: {
+                        trigger: element.querySelector("#sassIcon"),
+                        start: `${
+                            min1024.matches
+                                ? "top center+=60"
+                                : "top center-=20"
+                        }`,
+                        end: "bottom top",
+                        scrub: 1,
+                    },
+                }
+            );
+            gsap.fromTo(
+                element.querySelector("#stripeIcon"),
+                {
+                    opacity: 1,
+                    y: 0,
                 },
-            }
-        );
-        gsap.fromTo(
-            element.querySelector("#uikitIcon"),
-            {
-                opacity: 1,
-                y: 0,
-            },
-            {
-                opacity: 0,
-                y: 380,
-                scrollTrigger: {
-                    trigger: element.querySelector("#uikitIcon"),
-                    start: "top center+=100",
-                    end: "bottom top",
-                    scrub: 1,
+                {
+                    opacity: 0,
+                    y: 360,
+                    scrollTrigger: {
+                        trigger: element.querySelector("#stripeIcon"),
+                        start: `${
+                            min1024.matches
+                                ? "top center+=80"
+                                : "top center-=20"
+                        }`,
+                        end: "bottom top",
+                        scrub: 1,
+                    },
+                }
+            );
+            gsap.fromTo(
+                element.querySelector("#uikitIcon"),
+                {
+                    opacity: 1,
+                    y: 0,
                 },
-            }
-        );
-        gsap.fromTo(
-            element.querySelector("#gitkrakenIcon"),
-            {
-                opacity: 1,
-                y: 0,
-            },
-            {
-                opacity: 0,
-                y: 400,
-                scrollTrigger: {
-                    trigger: element.querySelector("#gitkrakenIcon"),
-                    start: "top center+=120",
-                    end: "bottom top",
-                    scrub: 1,
+                {
+                    opacity: 0,
+                    y: 380,
+                    scrollTrigger: {
+                        trigger: element.querySelector("#uikitIcon"),
+                        start: `${
+                            min1024.matches
+                                ? "top center+=100"
+                                : "top center-=20"
+                        }`,
+                        end: "bottom top",
+                        scrub: 1,
+                    },
+                }
+            );
+            gsap.fromTo(
+                element.querySelector("#gitkrakenIcon"),
+                {
+                    opacity: 1,
+                    y: 0,
                 },
-            }
-        );
+                {
+                    opacity: 0,
+                    y: 400,
+                    scrollTrigger: {
+                        trigger: element.querySelector("#gitkrakenIcon"),
+                        start: `${
+                            min1024.matches
+                                ? "top center+=120"
+                                : "top center-=20"
+                        }`,
+                        end: "bottom top",
+                        scrub: 1,
+                    },
+                }
+            );
+        }
     }, []);
 
     return (
-        <div className="absolute bottom-16 mx-auto w-full" ref={ref}>
+        <div className="lg:absolute lg:bottom-16 mx-auto w-full" ref={ref}>
             <div
-                className="flex justify-between mx-auto max-w-3xl z-10 invisible"
+                className="flex justify-between mx-auto max-w-3xl z-10  md:invisible"
                 id="logoContainer"
             >
                 <FontAwesomeIcon

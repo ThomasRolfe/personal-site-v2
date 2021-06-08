@@ -60,7 +60,7 @@ const Portfolio = (props) => {
     return (
         <section className="min-h-screen" ref={ref}>
             <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full ">
-                <h2 className="text-white text-7xl font-extrabold tracking-wide text-center my-36 fade-up">
+                <h2 className="text-white text-4xl sm:text-7xl font-extrabold tracking-wide text-center py-8 md:my-12 fade-up">
                     Portfolio
                 </h2>
                 {portfolios.map((portfolio, index) => {
