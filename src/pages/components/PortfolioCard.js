@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import BrandedLink from "../../../components/buttons/BrandedLink";
+import BrandedLink from "../../components/buttons/BrandedLink";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -23,7 +23,6 @@ const PortfolioCard = ({ portfolio, tags }) => {
                     trigger: element.querySelector(".portfolioImageContainer"),
                     scrub: 2,
                     start: "top-=500 bottom+=200",
-                    markers: true,
                 },
             }
         );

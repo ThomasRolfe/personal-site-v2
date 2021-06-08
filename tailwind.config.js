@@ -13,6 +13,7 @@ module.exports = {
                 //     DEFAULT: "#4f46e5",
                 //     dark: "#443ccf",
                 // },
+                "grey-low-con": "#4D4D57",
                 brand: {
                     light: "#95eef6",
                     DEFAULT: "#36E4FF",

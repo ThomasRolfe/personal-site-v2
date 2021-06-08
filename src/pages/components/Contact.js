@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import ContactForm from "../../components/contactForm";
+import ContactForm from "./ContactForm";
 import {
     faFacebook,
     faGithub,

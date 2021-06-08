@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useContext } from "react";
 import PortfolioCard from "./PortfolioCard";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { DataContext } from "../../../context/DataContext";
+import { DataContext } from "../../context/DataContext";
 
 const Portfolio = (props) => {
     const { portfolios, tags } = useContext(DataContext);

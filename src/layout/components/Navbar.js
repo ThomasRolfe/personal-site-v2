@@ -41,13 +41,13 @@ export default function Navbar() {
                         </div>
                         <div className="hidden ml-10 space-x-8 lg:block">
                             {navigation.map((link) => (
-                                <a
+                                <Link
                                     key={link.name}
-                                    href={link.href}
-                                    className="text-base font-medium text-white hover:text-indigo-50"
+                                    to={link.href}
+                                    className="text-base font-bold text-white hover:text-indigo-50"
                                 >
                                     {link.name}
-                                </a>
+                                </Link>
                             ))}
                         </div>
                     </div>
@@ -55,13 +55,13 @@ export default function Navbar() {
                 {mobileNavOpen && (
                     <div className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
                         {navigation.map((link) => (
-                            <a
+                            <Link
                                 key={link.name}
-                                href={link.href}
-                                className="text-base font-medium text-white hover:text-indigo-50"
+                                to={link.href}
+                                className="text-base font-bold text-white hover:text-indigo-50"
                             >
                                 {link.name}
-                            </a>
+                            </Link>
                         ))}
                     </div>
                 )}

@@ -1,10 +1,10 @@
 import React from "react";
 import PublicLayout from "../../layout/PublicLayout";
-import Contact from "./components/Contact";
-import Features from "./components/Features";
-import Hero from "./components/Hero";
-import Offerings from "./components/Offerings";
-import Portfolio from "./components/Portfolio";
+import Contact from "../components/Contact";
+import Features from "../components/Features";
+import Hero from "../components/Hero";
+import Offerings from "../components/Offerings";
+import Portfolio from "../components/Portfolio";
 
 const Home = (props) => {
     return (

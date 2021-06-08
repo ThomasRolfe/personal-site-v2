@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import BrandedLink from "../../../components/buttons/BrandedLink";
+import BrandedLink from "../../components/buttons/BrandedLink";
 import { gsap } from "gsap";
 import LogoGroup from "./LogoGroup";
 
