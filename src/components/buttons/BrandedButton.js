@@ -9,6 +9,7 @@ const BrandedButton = (props) => {
             onClick={props.onClick}
             disabled={props.disabled}
             id={props.id}
+            type={props.type}
         >
             {props.children}
         </button>

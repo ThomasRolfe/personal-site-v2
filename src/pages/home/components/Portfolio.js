@@ -31,7 +31,7 @@ const Portfolio = (props) => {
                     autoAlpha: 1,
                     scrollTrigger: {
                         trigger: card,
-                        start: "top bottom",
+                        start: "top bottom-=200",
                         end: "top bottom",
                     },
                 }

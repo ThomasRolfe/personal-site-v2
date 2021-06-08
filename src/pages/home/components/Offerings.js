@@ -78,8 +78,6 @@ const Offerings = (props) => {
             },
         });
 
-        console.log(timelineRefs.current.length);
-
         timelineRefs.current.forEach((card, index) => {
             timeline
                 .to(card.querySelector(".offeringCard"), {
@@ -162,11 +160,11 @@ const Offerings = (props) => {
                 id="offeringsContainer"
             >
                 <div
-                    className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col justify-between"
-                    id="offeringsContainer"
+                    className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full  inline-block"
+                    id=""
                 >
                     <h2
-                        className="text-black pt-8 md:pt-0 text-4xl md:text-7xl font-extrabold tracking-wide text-center fade-up invisible absolute"
+                        className="text-black pt-8 md:pt-0 text-4xl md:text-7xl font-extrabold tracking-wide text-center fade-up invisible absolute w-full"
                         id="what-do-i-do"
                     >
                         Input at{" "}

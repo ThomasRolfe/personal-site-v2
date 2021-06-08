@@ -20,8 +20,10 @@ const PortfolioCard = ({ portfolio, tags }) => {
                 y: "-150px",
                 x: "50px",
                 scrollTrigger: {
+                    trigger: element.querySelector(".portfolioImageContainer"),
                     scrub: 2,
-                    start: "top middle",
+                    start: "top-=500 bottom+=200",
+                    markers: true,
                 },
             }
         );
@@ -29,18 +31,18 @@ const PortfolioCard = ({ portfolio, tags }) => {
 
     return (
         <section
-            className="p-4 md:p-12 lg:p-24 bg-gradient-dark rounded-md sm:rounded-xl mb-24 portfolioCard invisible overflow-hidden"
+            className="p-4 md:p-12 lg:p-16 xl:p-24 bg-gradient-dark rounded-md sm:rounded-xl mb-24 portfolioCard invisible overflow-hidden"
             ref={ref}
         >
             <div className="grid grid-cols-2 ">
-                <div className="flex flex-col justify-between z-20 col-span-2">
+                <div className="flex flex-col justify-between z-20 col-span-2 lg:col-span-1">
                     <div>
                         <h3 className="text-white font-bold text-xl sm:text-5xl mb-3">
                             {portfolio.title.rendered}
                         </h3>
                         <a
                             target="_blank"
-                            rel="noopener"
+                            rel="noreferrer"
                             className="text-brand hover:text-brand-light hover:underline text-sm sm:text-lg inline-block mb-5"
                             href={portfolio.site_link}
                         >
@@ -51,7 +53,7 @@ const PortfolioCard = ({ portfolio, tags }) => {
                                 <a
                                     href={portfolio.github_link}
                                     target="_blank"
-                                    rel="noopener"
+                                    rel="noreferrer"
                                 >
                                     <FontAwesomeIcon
                                         icon={faGithub}
@@ -104,7 +106,7 @@ const PortfolioCard = ({ portfolio, tags }) => {
                         </BrandedLink>
                     </div>
                 </div>
-                <div className="portfolioContainer hidden lg:visible">
+                <div className="portfolioContainer hidden lg:block">
                     <div className="portfolioImageContainer">
                         <img
                             alt=""
@@ -113,7 +115,7 @@ const PortfolioCard = ({ portfolio, tags }) => {
                         ></img>
                         <img
                             alt=""
-                            className="rounded-lg hidden"
+                            className="rounded-lg"
                             src={portfolio.jetpack_featured_media_url}
                         ></img>
                     </div>

@@ -33,7 +33,6 @@ const socialLinks = [
 const Contact = (props) => {
     gsap.registerPlugin(ScrollTrigger);
     let iconContainer = useRef(null);
-    let contactFormRef = useRef(null);
 
     useEffect(() => {
         gsap.fromTo(
@@ -61,9 +60,9 @@ const Contact = (props) => {
         <>
             <div className="clip-slant-right h-48  bg-white w-full relative z-30"></div>
             <div className="bg-white flex justify-center flex-col min-h-2-3-screen">
-                <section className="grid grid-cols-1 lg:grid-cols-2 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-24 lg:pb-0">
+                <section className="grid grid-cols-1 lg:grid-cols-2 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 ">
                     <div className="">
-                        <h2 className="text-black text-center pt-8 lg:text-left text-4xl xs:text-5xl sm:text-6xl font-extrabold tracking-wide fade-up ">
+                        <h2 className="text-black text-center lg:text-left text-4xl xs:text-5xl sm:text-6xl font-extrabold tracking-wide fade-up ">
                             Lets work{" "}
                             <span className="text-gradient-primary">
                                 together!
@@ -78,9 +77,9 @@ const Contact = (props) => {
                             className="flex justify-center my-16"
                             ref={iconContainer}
                         >
-                            {socialLinks.map((item) => {
+                            {socialLinks.map((item, index) => {
                                 return (
-                                    <li className="mx-6 invisible">
+                                    <li key={index} className="mx-6 invisible">
                                         <Link to={item.path}>
                                             <FontAwesomeIcon
                                                 icon={item.icon}
@@ -94,7 +93,7 @@ const Contact = (props) => {
                     </div>
                     <div>
                         <div className="w-full md:w-2/3 mx-auto">
-                            <ContactForm ref={contactFormRef} />
+                            <ContactForm />
                         </div>
                     </div>
                 </section>

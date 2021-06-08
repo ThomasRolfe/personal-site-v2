@@ -8,6 +8,7 @@ import {
     faStripe,
     faUikit,
     faGitkraken,
+    faNode,
 } from "@fortawesome/free-brands-svg-icons";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -183,8 +184,29 @@ const LogoGroup = (props) => {
                     },
                 }
             );
+            gsap.fromTo(
+                element.querySelector("#nodeIcon"),
+                {
+                    opacity: 1,
+                    y: 0,
+                },
+                {
+                    opacity: 0,
+                    y: 400,
+                    scrollTrigger: {
+                        trigger: element.querySelector("#nodeIcon"),
+                        start: `${
+                            min1024.matches
+                                ? "top center+=140"
+                                : "top center-=20"
+                        }`,
+                        end: "bottom top",
+                        scrub: 1,
+                    },
+                }
+            );
         }
-    }, []);
+    }, [min768.matches, min1024.matches]);
 
     return (
         <div className="lg:absolute lg:bottom-16 mx-auto w-full" ref={ref}>
@@ -234,6 +256,12 @@ const LogoGroup = (props) => {
                     className="svg-hover-gradient-primary"
                     size="3x"
                     id="gitkrakenIcon"
+                />
+                <FontAwesomeIcon
+                    icon={faNode}
+                    className="svg-hover-gradient-primary"
+                    size="3x"
+                    id="nodeIcon"
                 />
             </div>
         </div>

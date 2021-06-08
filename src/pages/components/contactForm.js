@@ -43,34 +43,29 @@ const ContactForm = (props) => {
                 postContact(name, email, message);
             }}
         >
-            <label
-                htmlFor="name"
-                className="text-gray-500 text-sm block mb-2"
-                autoComplete="name"
-                required
-            >
+            <label htmlFor="name" className="text-gray-500 text-sm block mb-2">
                 Name
             </label>
             <input
                 type="text"
                 name="name"
+                autoComplete="name"
                 className={inputClasses}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                required
             />
-            <label
-                htmlFor="email"
-                className="text-gray-500 text-sm block mb-2"
-                autoComplete="email"
-            >
+            <label htmlFor="email" className="text-gray-500 text-sm block mb-2">
                 Email
             </label>
             <input
-                type="text"
+                type="email"
                 name="email"
+                autoComplete="email"
                 className={inputClasses}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                required
             />
             <label
                 htmlFor="message"
@@ -84,10 +79,11 @@ const ContactForm = (props) => {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 rows="5"
+                required
             />
             <div className="text-center ">
                 <BrandedButton
-                    to=""
+                    type="submit"
                     className="button bg-brand text-white hover:text-dark transition"
                     id=""
                 >

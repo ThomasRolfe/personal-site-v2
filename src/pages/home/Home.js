@@ -1,6 +1,5 @@
 import React from "react";
 import PublicLayout from "../../layout/PublicLayout";
-import ContactForm from "../components/contactForm";
 import Contact from "./components/Contact";
 import Features from "./components/Features";
 import Hero from "./components/Hero";

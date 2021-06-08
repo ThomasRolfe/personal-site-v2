@@ -72,7 +72,7 @@ const Hero = (props) => {
                         </BrandedLink>
                         <BrandedLink
                             to="#"
-                            className="font-bold button button-brand-hollow mt-8 sm:mt-0 sm:ml-8 invisible transition w-full sm:w-auto"
+                            className="button button-brand-hollow mt-8 sm:mt-0 sm:ml-8 invisible transition w-full sm:w-auto font-bold "
                             id="portfolioLink"
                         >
                             Portfolio
