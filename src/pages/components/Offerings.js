@@ -73,8 +73,9 @@ const Offerings = (props) => {
                 trigger: element.querySelector("#offeringsContainer"),
                 scrub: true,
                 start: "top",
-                end: "bottom -150%",
+                // end: "bottom -150%",
                 pin: true,
+                // pinSpacing: false,
             },
         });
 
