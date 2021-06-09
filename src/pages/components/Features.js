@@ -57,11 +57,6 @@ const Features = (props) => {
                 <h2 className="text-white text-4xl sm:text-7xl font-extrabold tracking-wide text-center py-8 md:my-20 fade-up">
                     What can I build?
                 </h2>
-                {/* <div className="text-white">
-                    portfolio sites brochures web design business reporting
-                    business intelligence integration payment gateway
-                    integration bugfixing
-                </div> */}
                 <FeatureGrid>
                     {featureList.map((item, index) => {
                         return <FeatureItem key={index} {...item} />;
