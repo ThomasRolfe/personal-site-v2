@@ -73,7 +73,7 @@ const Offerings = (props) => {
                 trigger: element.querySelector("#offeringsContainer"),
                 scrub: true,
                 start: "top",
-                // end: "bottom -150%",
+                end: "bottom -4300px",
                 pin: true,
                 // pinSpacing: false,
             },
@@ -161,7 +161,7 @@ const Offerings = (props) => {
                 id="offeringsContainer"
             >
                 <div
-                    className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full  inline-block"
+                    className="max-w-screen-2xl mx-auto w-full inline-block"
                     id=""
                 >
                     <h2
