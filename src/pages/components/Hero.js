@@ -3,6 +3,7 @@ import BrandedLink from "../../components/buttons/BrandedLink";
 import { gsap } from "gsap";
 import LogoGroup from "./LogoGroup";
 import HeroIllustration from "./HeroIllustration";
+import ScrollToRef from "../../components/helpers/ScrollToRef";
 
 const Hero = (props) => {
     const ref = useRef(null);
@@ -136,15 +137,21 @@ const Hero = (props) => {
                                     to="#what-do-i-do"
                                     className="button bg-brand text-white invisible hover:text-dark transition w-full sm:w-auto"
                                     id="featuresLink"
+                                    onClick={() => {
+                                        ScrollToRef(props.offeringsRef);
+                                    }}
                                 >
                                     <span className="text-shadow font-bold">
-                                        What do I do?
+                                        What can I do for you?
                                     </span>
                                 </BrandedLink>
                                 <BrandedLink
                                     to="#"
                                     className="button button-brand-hollow mt-8 sm:mt-0 sm:ml-8 invisible transition w-full sm:w-auto font-bold "
                                     id="portfolioLink"
+                                    onClick={() => {
+                                        ScrollToRef(props.portfolioRef);
+                                    }}
                                 >
                                     Portfolio
                                 </BrandedLink>

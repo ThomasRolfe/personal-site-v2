@@ -3,7 +3,14 @@
 @tailwind utilities;
 @import url("https://use.typekit.net/ppw4ugl.css");
 
+html,
 body {
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
     scroll-behavior: smooth;
 }
 

@@ -34,8 +34,17 @@ const Footer = (props) => {
                             Contact
                         </Link>
                     </li>
+                    <li className="ml-auto">
+                        <a
+                            className="text-sm text-gray-500 mt-6"
+                            href="https://storyset.com/online"
+                        >
+                            Online illustrations by Storyset
+                        </a>
+                    </li>
                 </ul>
             </div>
+
             <div className="text-center text-gray-300 mt-24 mb-6">
                 Copyright {new Date().getFullYear()} Tom Rolfe
             </div>

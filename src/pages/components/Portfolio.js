@@ -58,8 +58,11 @@ const Portfolio = (props) => {
     }, [portfolios]);
 
     return (
-        <section className="min-h-screen" ref={ref}>
-            <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full ">
+        <section className="min-h-screen" ref={props.portfolioRef}>
+            <div
+                className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full "
+                ref={ref}
+            >
                 <h2 className="text-white text-4xl sm:text-7xl font-extrabold tracking-wide text-center py-8 md:my-12 fade-up">
                     Portfolio
                 </h2>

@@ -1,8 +1,10 @@
-import gsap from "gsap/gsap-core";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useRef, useEffect } from "react";
 
 const FeatureGrid = (props) => {
     const featureGridRef = useRef(null);
+    gsap.registerPlugin(ScrollTrigger);
 
     useEffect(() => {
         const element = featureGridRef.current;
@@ -10,19 +12,19 @@ const FeatureGrid = (props) => {
             element.querySelectorAll(".featureItemCard")
         );
 
-        items.forEach((card) => {
+        items.forEach((item) => {
             gsap.fromTo(
-                card,
+                item,
                 {
                     opacity: 0,
-                    y: 50,
+                    x: 100,
                 },
                 {
                     opacity: 1,
-                    y: 0,
+                    x: 0,
                     autoAlpha: 1,
                     scrollTrigger: {
-                        trigger: card,
+                        trigger: item,
                         start: "top bottom-=200",
                         end: "top bottom",
                     },

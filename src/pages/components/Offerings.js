@@ -80,33 +80,35 @@ const Offerings = (props) => {
         });
 
         timelineRefs.current.forEach((card, index) => {
-            timeline
-                .to(card.querySelector(".offeringCard"), {
-                    opacity: 1,
-                    autoAlpha: 1,
-                    duration: 0.1,
-                })
-
-                .fromTo(
-                    card.querySelector(".offeringIcon"),
-                    { opacity: 0, top: 100 },
-                    { opacity: 1, autoAlpha: 1, top: 0, duration: 10 }
-                )
-                .fromTo(
-                    card.querySelector(".offeringCopy"),
-                    {
-                        opacity: 0,
-                        x: 50,
-                    },
-                    {
-                        x: 0,
-                        duration: 10,
+            if (index > 0) {
+                timeline
+                    .to(card.querySelector(".offeringCard"), {
                         opacity: 1,
                         autoAlpha: 1,
-                    }
-                )
-                .addLabel(`_${index}offeringIn`)
-                .addPause(`_${index}offeringIn+=10`);
+                        duration: 0.1,
+                    })
+
+                    .fromTo(
+                        card.querySelector(".offeringIcon"),
+                        { opacity: 0, top: 100 },
+                        { opacity: 1, autoAlpha: 1, top: 0, duration: 10 }
+                    )
+                    .fromTo(
+                        card.querySelector(".offeringCopy"),
+                        {
+                            opacity: 0,
+                            x: 50,
+                        },
+                        {
+                            x: 0,
+                            duration: 10,
+                            opacity: 1,
+                            autoAlpha: 1,
+                        }
+                    )
+                    .addLabel(`_${index}offeringIn`)
+                    .addPause(`_${index}offeringIn+=10`);
+            }
 
             if (index + 1 < timelineRefs.current.length) {
                 // This stops the last card from animating away when scrolling down
@@ -159,6 +161,7 @@ const Offerings = (props) => {
             <section
                 className="h-screen bg-white z-30 relative pt-4 md:pt-12 overflow-hidden"
                 id="offeringsContainer"
+                ref={props.offeringsRef}
             >
                 <div
                     className="max-w-screen-2xl mx-auto w-full inline-block"
@@ -177,6 +180,7 @@ const Offerings = (props) => {
                             <OfferingCard
                                 key={index}
                                 refFunction={addToRefs}
+                                hide={index < 1}
                                 {...item}
                             />
                         );
