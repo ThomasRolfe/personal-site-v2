@@ -73,9 +73,8 @@ const Offerings = (props) => {
                 trigger: element.querySelector("#offeringsContainer"),
                 scrub: true,
                 start: "top",
-                end: "bottom -4300px",
+                end: "+=800",
                 pin: true,
-                // pinSpacing: false,
             },
         });
 
@@ -132,7 +131,10 @@ const Offerings = (props) => {
                     });
             }
         });
+        ScrollTrigger.refresh(true);
     }, []);
+
+    ScrollTrigger.refresh();
 
     useEffect(() => {
         const element = ref.current;
@@ -156,10 +158,10 @@ const Offerings = (props) => {
     }, []);
 
     return (
-        <div ref={ref}>
-            <div className="clip-slant-right h-48  bg-white w-full relative z-30"></div>
+        <div ref={ref} className="w-full">
+            <div className="clip-slant-right h-48  bg-gray-50 w-full relative z-30"></div>
             <section
-                className="h-screen bg-white z-30 relative pt-4 md:pt-12 overflow-hidden"
+                className="h-screen bg-gray-50 z-30 relative pt-4 md:pt-12 overflow-hidden w-full"
                 id="offeringsContainer"
                 ref={props.offeringsRef}
             >

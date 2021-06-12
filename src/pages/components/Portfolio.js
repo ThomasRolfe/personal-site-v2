@@ -55,10 +55,11 @@ const Portfolio = (props) => {
                 },
             }
         );
+        ScrollTrigger.refresh(true);
     }, [portfolios]);
 
     return (
-        <section className="min-h-screen" ref={props.portfolioRef}>
+        <section className="min-h-2-screen " ref={props.portfolioRef}>
             <div
                 className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full "
                 ref={ref}

@@ -32,19 +32,18 @@ export default function Navbar() {
                             <FontAwesomeIcon
                                 icon={faBars}
                                 className="text-white hover:scale-110 transform transition text-xl"
-                                // size="2x"
                                 id=""
                                 onClick={() => {
                                     setMobileNavOpen(!mobileNavOpen);
                                 }}
                             />
                         </div>
-                        <div className="hidden ml-10 space-x-8 lg:block">
+                        <div className="hidden ml-10 space-x-8 lg:block text-gray-400">
                             {navigation.map((link) => (
                                 <Link
                                     key={link.name}
                                     to={link.href}
-                                    className="text-base font-bold text-white hover:text-indigo-50"
+                                    className="hover:text-white transition"
                                 >
                                     {link.name}
                                 </Link>

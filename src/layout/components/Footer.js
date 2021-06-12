@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCookieBite } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = (props) => {
     return (
@@ -33,6 +35,19 @@ const Footer = (props) => {
                         <Link to="/" className="hover:text-white transition">
                             Contact
                         </Link>
+                    </li>
+                    <li>
+                        <button
+                            onClick={() => {
+                                console.log("Handle cookies");
+                            }}
+                        >
+                            <FontAwesomeIcon
+                                icon={faCookieBite}
+                                className="text-gray-500 text-lg hover:pointer hover:text-white transition"
+                                title="Revoke cookie permission"
+                            />
+                        </button>
                     </li>
                     <li className="ml-auto">
                         <a

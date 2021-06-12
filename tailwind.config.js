@@ -7,12 +7,6 @@ module.exports = {
         extend: {
             colors: {
                 dark: "#1D1D26",
-                // secondary: {
-                //     lighter: "#6e67f5",
-                //     light: "#5951ed",
-                //     DEFAULT: "#4f46e5",
-                //     dark: "#443ccf",
-                // },
                 "grey-low-con": "#4D4D57",
                 brand: {
                     light: "#95eef6",
@@ -33,6 +27,7 @@ module.exports = {
                 "1-2-screen": "50vh",
                 "2-3-screen": "66vh",
                 "1-3-screen": "33vh",
+                "2-screen": "200vh",
                 120: "30rem",
                 140: "35rem",
             },
