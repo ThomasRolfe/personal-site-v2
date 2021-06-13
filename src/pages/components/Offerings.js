@@ -73,7 +73,7 @@ const Offerings = (props) => {
                 trigger: element.querySelector("#offeringsContainer"),
                 scrub: true,
                 start: "top",
-                end: "+=800",
+                end: "+=3800",
                 pin: true,
             },
         });
