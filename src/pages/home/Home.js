@@ -5,6 +5,7 @@ import Features from "../components/Features";
 import Hero from "../components/Hero";
 import Offerings from "../components/Offerings";
 import Portfolio from "../components/Portfolio";
+import ClipSlant from "../components/ClipSlant";
 
 const Home = (props) => {
     const featuresRef = useRef(null);
@@ -20,9 +21,11 @@ const Home = (props) => {
                 featuresRef={featuresRef}
                 offeringsRef={offeringsRef}
             />
+            <ClipSlant />
             <Offerings offeringsRef={offeringsRef} />
             <Portfolio portfolioRef={portfolioRef} />
             <Features featuresRef={featuresRef} />
+            <ClipSlant />
             <Contact />
         </PublicLayout>
     );

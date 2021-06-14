@@ -167,9 +167,6 @@ const Hero = (props) => {
                     <HeroIllustration className="w-2/3" />
                 </div>
             </section>
-            <div className="hidden md:block mb-12 w-3/4 mx-auto lg:mx-0 lg:w-full z-20 relative">
-                <LogoGroup />
-            </div>
         </>
     );
 };

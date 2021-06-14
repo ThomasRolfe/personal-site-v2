@@ -35,7 +35,6 @@ const LogoGroup = (props) => {
                     y: 0,
                     autoAlpha: 1,
                     duration: 0.5,
-                    delay: 1.5,
                 }
             );
 

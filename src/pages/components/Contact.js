@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import ContactForm from "./ContactForm";
+
 import {
     faFacebook,
     faGithub,
@@ -58,8 +59,7 @@ const Contact = (props) => {
 
     return (
         <>
-            <div className="clip-slant-right h-48  bg-white w-full relative z-30"></div>
-            <div className="bg-white flex justify-center flex-col min-h-2-3-screen">
+            <div className="bg-gray-50 flex justify-center flex-col min-h-2-3-screen">
                 <section className="grid grid-cols-1 lg:grid-cols-2 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 ">
                     <div className="">
                         <h2 className="text-black text-center lg:text-left text-4xl xs:text-5xl sm:text-6xl font-extrabold tracking-wide fade-up ">
