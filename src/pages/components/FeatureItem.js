@@ -3,10 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const FeatureItem = (props) => {
     return (
-        <div
-            className="bg-gradient-dark p-8 rounded-md text-white hover:shadow-lg transition invisible featureItemCard"
-            data-tooltip={props.title}
-        >
+        <div className="bg-gradient-dark p-8 rounded-md text-white hover:shadow-lg transition invisible featureItemCard">
             <h4 className="flex items-center">
                 <FontAwesomeIcon
                     icon={props.icon}

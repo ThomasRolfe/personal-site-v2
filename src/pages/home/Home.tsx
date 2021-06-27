@@ -7,7 +7,7 @@ import Offerings from "../components/Offerings";
 import Portfolio from "../components/Portfolio";
 import ClipSlant from "../components/ClipSlant";
 
-const Home = (props) => {
+const Home: React.FC  = () => {
     const featuresRef = useRef(null);
     const offeringsRef = useRef(null);
     const portfolioRef = useRef(null);

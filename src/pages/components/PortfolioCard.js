@@ -17,7 +17,7 @@ const PortfolioCard = ({ portfolio, tags }) => {
                 // y: "350px",
             },
             {
-                y: "-150px",
+                y: "-180px",
                 x: "50px",
                 scrollTrigger: {
                     trigger: element.querySelector(".portfolioImageContainer"),
@@ -37,20 +37,20 @@ const PortfolioCard = ({ portfolio, tags }) => {
                 <div className="flex flex-col justify-between z-20 col-span-2 lg:col-span-1">
                     <div>
                         <h3 className="text-white font-bold text-xl sm:text-5xl mb-3">
-                            {portfolio.title.rendered}
+                            {portfolio.title}
                         </h3>
                         <a
                             target="_blank"
                             rel="noreferrer"
                             className="text-brand hover:text-brand-light hover:underline text-sm sm:text-lg inline-block mb-5"
-                            href={portfolio.site_link}
+                            href={portfolio.path}
                         >
-                            {portfolio.site_link}
+                            {portfolio.path}
                         </a>
-                        {portfolio.github_link ? (
+                        {portfolio.github ? (
                             <>
                                 <a
-                                    href={portfolio.github_link}
+                                    href={portfolio.github}
                                     target="_blank"
                                     rel="noreferrer"
                                 >
@@ -72,7 +72,7 @@ const PortfolioCard = ({ portfolio, tags }) => {
                                             key={index}
                                             className="inline-block uppercase rounded border border-gray-400 text-gray-400 text-xs py-1 px-2"
                                         >
-                                            {tags[tag]}
+                                            {tag.label}
                                         </span>
                                     );
                                 })}
@@ -85,14 +85,14 @@ const PortfolioCard = ({ portfolio, tags }) => {
                                 <img
                                     alt=""
                                     className="rounded-md"
-                                    src={portfolio.jetpack_featured_media_url}
+                                    src={`${process.env.REACT_APP_API_URL}${portfolio.featured_images[0].url}`}
                                 ></img>
                             </div>
                         </div>
                         <p
                             className="text-white mt-8 pr-0 lg:pr-24"
                             dangerouslySetInnerHTML={{
-                                __html: portfolio.excerpt.rendered,
+                                __html: portfolio.short_description,
                             }}
                         ></p>
                     </div>
@@ -107,16 +107,16 @@ const PortfolioCard = ({ portfolio, tags }) => {
                 </div>
                 <div className="portfolioContainer hidden lg:block">
                     <div className="portfolioImageContainer">
-                        <img
-                            alt=""
-                            className="rounded-lg"
-                            src={portfolio.jetpack_featured_media_url}
-                        ></img>
-                        <img
-                            alt=""
-                            className="rounded-lg"
-                            src={portfolio.jetpack_featured_media_url}
-                        ></img>
+                        {portfolio.featured_images.map((image, index) => {
+                            return (
+                                <img
+                                    key={index}
+                                    alt=""
+                                    className="rounded-lg"
+                                    src={`${process.env.REACT_APP_API_URL}${image.url}`}
+                                ></img>
+                            );
+                        })}
                     </div>
                 </div>
             </div>

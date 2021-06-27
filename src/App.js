@@ -16,7 +16,7 @@ import {
     PrimaryGradient,
 } from "./components/helpers/GradientDefinitions";
 
-import Home from "./pages/home/Home";
+import Home from "./pages/home/Home.tsx";
 import About from "./pages/about/About";
 import Portfolio from "./pages/portfolio/Portfolio";
 import PortfolioPost from "./pages/portfolio/PortfolioPost";
@@ -66,17 +66,16 @@ export default function App() {
 
     useEffect(() => {
         GetPortfolioPosts().then((response) => {
-            setPortfolios(response.data);
+            setPortfolios(
+                response.data.sort((a, b) => {
+                    return a.order < b.order ? -1 : a.order > b.order ? 1 : 0;
+                })
+            );
             ScrollTrigger.refresh();
         });
 
         GetTags().then((response) => {
-            setTags(
-                response.data.reduce((obj, item) => {
-                    obj[item.id] = item.name;
-                    return obj;
-                }, {})
-            );
+            setTags(response.data);
             ScrollTrigger.refresh();
         });
     }, [setPortfolios, setTags]);
