@@ -17,20 +17,17 @@ const PortfolioPost = (props) => {
         <PublicLayout>
             <div className="bg-stripe-1 z-5" id="stripeLeft"></div>
             <div className="bg-stripe-2 z-5" id="stripeRight"></div>
-            <section
-                className="min-h-screen mt-12 md:mt-24"
-                ref={props.portfolioRef}
-            >
+            <section className=" mt-12 md:mt-24" ref={props.portfolioRef}>
                 <div
-                    className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full "
+                    className=" mx-auto px-4 sm:px-6 lg:px-8 w-full lg:container "
                     ref={ref}
                 >
                     {portfolio && (
                         <>
-                            <h2 className="text-white text-4xl sm:text-7xl font-extrabold tracking-wide text-center py-8 md:my-12 fade-up">
+                            <h2 className="text-white text-4xl lg:text-7xl font-extrabold tracking-wide text-center py-8 md:my-12 fade-up">
                                 {portfolio.title}
                             </h2>
-                            <div className="grid grid-cols-1 lg:grid-cols-2">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 pb-12">
                                 <div>
                                     <h2 className="text-white text-2xl font-extrabold tracking-wide fade-up">
                                         {portfolio.title}
@@ -73,13 +70,13 @@ const PortfolioPost = (props) => {
                                     )}
                                     <img
                                         alt=""
-                                        className="rounded-md"
+                                        className="rounded-md mt-8"
                                         src={`${process.env.REACT_APP_API_URL}${portfolio.featured_images[0].url}`}
                                     ></img>
                                 </div>
                                 <div className="flex flex-col justify-center">
                                     <div
-                                        className="text-white px-12 pr-0 portfolio-text"
+                                        className="text-white pt-8 sm:pt-12 lg:pt-0 lg:px-12 pr-0 portfolio-text"
                                         dangerouslySetInnerHTML={{
                                             __html: portfolio.description,
                                         }}
