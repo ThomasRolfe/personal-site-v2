@@ -76,12 +76,12 @@ const Contact = (props) => {
                             {socialLinks.map((item, index) => {
                                 return (
                                     <li key={index} className="mx-6 invisible">
-                                        <Link to={item.path}>
+                                        <a target="_blank" href={item.path}>
                                             <FontAwesomeIcon
                                                 icon={item.icon}
                                                 className="svg-hover-gradient-primary hover:scale-110 transform transition text-4xl md:text-5xl"
                                             />
-                                        </Link>
+                                        </a>
                                     </li>
                                 );
                             })}
