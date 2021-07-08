@@ -17,7 +17,6 @@ import {
 } from "./components/helpers/GradientDefinitions";
 
 import Home from "./pages/home/Home.tsx";
-import About from "./pages/about/About";
 import Portfolio from "./pages/portfolio/Portfolio";
 import PortfolioPost from "./pages/portfolio/PortfolioPost";
 import Contact from "./pages/contact/Contact";
@@ -36,7 +35,6 @@ function usePageViews() {
 
 const routes = [
     { routeName: "home", path: "/", component: Home, menu: true },
-    { routeName: "about", path: "/about", component: About, menu: true },
     {
         routeName: "portfoliopost",
         path: "/portfolio/:slug",

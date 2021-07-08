@@ -1,13 +1,11 @@
 import React, { useRef, useEffect } from "react";
 import BrandedLink from "../../components/buttons/BrandedLink";
 import { gsap } from "gsap";
-import LogoGroup from "./LogoGroup";
 import HeroIllustration from "./HeroIllustration";
 import ScrollToRef from "../../components/helpers/ScrollToRef";
 
 const Hero = (props) => {
     const ref = useRef(null);
-    const illustrationContainerRef = useRef(null);
 
     useEffect(() => {
         const element = ref.current;
@@ -39,76 +37,6 @@ const Hero = (props) => {
             duration: 0.3,
             delay: 0.9,
             // ease: "Power2",
-        });
-    }, []);
-
-    useEffect(() => {
-        const element = illustrationContainerRef.current;
-        gsap.fromTo(
-            element.querySelector("#laptop"),
-            {
-                x: 50,
-                autoAlpha: 0,
-                duration: 0.5,
-                opacity: 0,
-            },
-            {
-                x: 0,
-                autoAlpha: 1,
-                duration: 0.5,
-                opacity: 1,
-                delay: 1,
-            }
-        );
-        gsap.fromTo(
-            element.querySelector("#background-screen"),
-            {
-                x: 50,
-                autoAlpha: 0,
-                duration: 0.5,
-                opacity: 0,
-            },
-            {
-                x: 0,
-                autoAlpha: 1,
-                duration: 0.5,
-                opacity: 1,
-                delay: 1.2,
-            }
-        );
-        gsap.fromTo(
-            element.querySelector("#foreground-screen"),
-            {
-                x: 50,
-                autoAlpha: 0,
-                duration: 0.5,
-                opacity: 0,
-            },
-            {
-                x: 0,
-                autoAlpha: 1,
-                duration: 0.5,
-                opacity: 1,
-                delay: 1.4,
-            }
-        );
-        gsap.to(element.querySelector("#foreground-screen"), {
-            y: -800,
-            scrollTrigger: {
-                scrub: 1,
-            },
-        });
-        gsap.to(element.querySelector("#background-screen"), {
-            y: -400,
-            scrollTrigger: {
-                scrub: 1,
-            },
-        });
-        gsap.to(element.querySelector("#laptop"), {
-            y: -200,
-            scrollTrigger: {
-                scrub: 1,
-            },
         });
     }, []);
 
@@ -159,13 +87,8 @@ const Hero = (props) => {
                         </div>
                     </div>
                 </div>
-                <div
-                    className="flipX justify-center align-middle hidden lg:flex"
-                    ref={illustrationContainerRef}
-                    id="illustration"
-                >
-                    <HeroIllustration className="w-2/3" />
-                </div>
+
+                <HeroIllustration className="w-10/12 " />
             </section>
         </>
     );

@@ -22,17 +22,18 @@ const Footer = (props) => {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/" className="hover:text-white transition ">
-                            About
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/" className="hover:text-white transition">
+                        <Link
+                            to="/portfolio"
+                            className="hover:text-white transition"
+                        >
                             Portfolio
                         </Link>
                     </li>
                     <li>
-                        <Link to="/" className="hover:text-white transition">
+                        <Link
+                            to="/contact"
+                            className="hover:text-white transition"
+                        >
                             Contact
                         </Link>
                     </li>

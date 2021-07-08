@@ -15,37 +15,37 @@ const featureList = [
     {
         title: "Portfolio Sites",
         description:
-            "Build an online presence for your business, hobby, artwork and more. ",
+            "Build an online presence for your business, hobby, artwork and more.",
         icon: faEnvelope,
     },
     {
         title: "Reporting Dashboards",
         description:
-            "Build an online presence for your business, hobby, artwork and more.",
+            "Visualise your data in a meaningful & easy to consume way.",
         icon: faChartArea,
     },
     {
         title: "Business Intelligence",
         description:
-            "Build an online presence for your business, hobby, artwork and more.",
+            "Find information amongst your data & drive business decisions.",
         icon: faProjectDiagram,
     },
     {
         title: "Payment Gateways",
         description:
-            "Build an online presence for your business, hobby, artwork and more.",
+            "Integrate payment gateways in to your website or shop to make payments a breeze.",
         icon: faCreditCard,
     },
     {
         title: "Bug Fixes",
         description:
-            "Build an online presence for your business, hobby, artwork and more.",
+            "Squash bugs in old or new projects on a case by case basis.",
         icon: faBug,
     },
     {
         title: "Web Design",
         description:
-            "Build an online presence for your business, hobby, artwork and more.",
+            "Design of websites, layouts and interfaces to suit your projects needs and style.",
         icon: faPaintBrush,
     },
 ];

@@ -67,15 +67,19 @@ const Portfolio = (props) => {
                 <h2 className="text-white text-4xl sm:text-7xl font-extrabold tracking-wide text-center py-8 md:my-12 fade-up">
                     Portfolio
                 </h2>
-                {portfolios.map((portfolio, index) => {
-                    return (
-                        <PortfolioCard
-                            key={index}
-                            portfolio={portfolio}
-                            tags={tags}
-                        />
-                    );
-                })}
+                {portfolios
+                    .filter((item, index) => {
+                        return index < 5;
+                    })
+                    .map((portfolio, index) => {
+                        return (
+                            <PortfolioCard
+                                key={index}
+                                portfolio={portfolio}
+                                tags={tags}
+                            />
+                        );
+                    })}
             </div>
         </section>
     );

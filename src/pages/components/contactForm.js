@@ -1,51 +1,33 @@
-import React, { useState } from "react";
-import Axios from "axios";
-import querystring from "querystring";
+import React, { useState, useEffect } from "react";
 import BrandedButton from "../../components/buttons/BrandedButton";
+import { useForm, ValidationError } from "@formspree/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 
 const ContactForm = (props) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
 
-    const postContact = (name, email, message) => {
-        Axios.post(
-            "https://www.api.thomasrolfe.co.uk/wp-json/contact-form-7/v1/contact-forms/62/feedback",
-            querystring.stringify({
-                "your-name": name,
-                "your-email": email,
-                "your-message": message,
-                "your-subject": "New contact from website",
-            })
-        )
-            .then((response) => {
-                // successModal(
-                //     "Thankyou for your message. I will respond as soon as possible."
-                // );
-                setName("");
-                setEmail("");
-                setMessage("");
-            })
-            .catch((e) => {
-                // errorModal(
-                //     "Oops, something went wrong. Please check your inputs and try again."
-                // );
-            });
-    };
+    const [state, handleSubmit] = useForm("xdoydqyo");
+
+    useEffect(() => {
+        if (state.succeeded) {
+            setName("");
+            setEmail("");
+            setMessage("");
+        }
+    }, [state]);
 
     const inputClasses = `text-gray-700 appearance-none rounded w-full py-2 px-3 leading-tight focus:bg-white border focus:border-brand border-gray-300 focus:outline-none
     mb-8`;
 
     return (
-        <form
-            onSubmit={(e) => {
-                e.preventDefault();
-                postContact(name, email, message);
-            }}
-        >
+        <form onSubmit={handleSubmit}>
             <label htmlFor="name" className="text-gray-500 text-sm block mb-2">
                 Name
             </label>
+            <ValidationError prefix="Name" field="name" errors={state.errors} />
             <input
                 type="text"
                 name="name"
@@ -55,9 +37,15 @@ const ContactForm = (props) => {
                 onChange={(e) => setName(e.target.value)}
                 required
             />
+
             <label htmlFor="email" className="text-gray-500 text-sm block mb-2">
                 Email
             </label>
+            <ValidationError
+                prefix="Email"
+                field="email"
+                errors={state.errors}
+            />
             <input
                 type="email"
                 name="email"
@@ -73,6 +61,11 @@ const ContactForm = (props) => {
             >
                 Message
             </label>
+            <ValidationError
+                prefix="Message"
+                field="message"
+                errors={state.errors}
+            />
             <textarea
                 name="message"
                 className={`${inputClasses} resize-none`}
@@ -82,13 +75,30 @@ const ContactForm = (props) => {
                 required
             />
             <div className="text-center ">
-                <BrandedButton
-                    type="submit"
-                    className="button bg-brand text-white hover:text-dark transition"
-                    id=""
-                >
-                    <span className="text-shadow font-bold">Send message</span>
-                </BrandedButton>
+                {state.succeeded && (
+                    <p>
+                        Thank you for your message! I will try to reply as soon
+                        as possible.
+                    </p>
+                )}
+                {state.submitting && (
+                    <FontAwesomeIcon
+                        icon={faCircleNotch}
+                        className="text-brand hover:text-brand-light hover:underline cursor-pointer text-md ml-3"
+                        size="2x"
+                        spin
+                    />
+                )}
+                {!state.submitting && !state.succeeded && (
+                    <BrandedButton
+                        type="submit"
+                        className="button bg-brand text-white hover:text-dark transition"
+                    >
+                        <span className="text-shadow font-bold">
+                            Send message
+                        </span>
+                    </BrandedButton>
+                )}
             </div>
         </form>
     );

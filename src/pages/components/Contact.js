@@ -58,7 +58,7 @@ const Contact = (props) => {
     }, []);
 
     return (
-        <>
+        <section className="relative">
             <div className="bg-gray-50 flex justify-center flex-col min-h-2-3-screen">
                 <section className="grid grid-cols-1 lg:grid-cols-2 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 ">
                     <div className="">
@@ -98,7 +98,7 @@ const Contact = (props) => {
                     </div>
                 </section>
             </div>
-        </>
+        </section>
     );
 };
 
