@@ -14,20 +14,16 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const socialLinks = [
     {
-        path: "/",
+        path: "https://www.facebook.com/TomRolfeWeb/",
         icon: faFacebook,
     },
     {
-        path: "/",
+        path: "https://github.com/ThomasRolfe",
         icon: faGithub,
     },
     {
-        path: "/",
+        path: "https://www.linkedin.com/in/tom-rolfe-web/",
         icon: faLinkedin,
-    },
-    {
-        path: "/",
-        icon: faEnvelope,
     },
 ];
 

@@ -37,7 +37,7 @@ const Footer = (props) => {
                             Contact
                         </Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <button
                             onClick={() => {
                                 console.log("Handle cookies");
@@ -49,7 +49,7 @@ const Footer = (props) => {
                                 title="Revoke cookie permission"
                             />
                         </button>
-                    </li>
+                    </li> */}
                     <li className="ml-auto">
                         <a
                             className="text-sm text-gray-500 mt-6"
