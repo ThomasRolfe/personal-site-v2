@@ -37,19 +37,6 @@ const Footer = (props) => {
                             Contact
                         </Link>
                     </li>
-                    {/* <li>
-                        <button
-                            onClick={() => {
-                                console.log("Handle cookies");
-                            }}
-                        >
-                            <FontAwesomeIcon
-                                icon={faCookieBite}
-                                className="text-gray-500 text-lg hover:pointer hover:text-white transition"
-                                title="Revoke cookie permission"
-                            />
-                        </button>
-                    </li> */}
                     <li className="ml-auto">
                         <a
                             className="text-sm text-gray-500 mt-6"

@@ -13,8 +13,6 @@ const PortfolioPost = (props) => {
 
     const ref = useRef(null);
 
-    console.log(portfolio);
-
     return (
         <PublicLayout>
             <div className="bg-stripe-1 z-5" id="stripeLeft"></div>
