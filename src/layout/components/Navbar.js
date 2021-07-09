@@ -50,8 +50,29 @@ export default function Navbar() {
                         </div>
                     </div>
                 </div>
-                {mobileNavOpen && (
-                    <div className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
+            </nav>
+            {mobileNavOpen && (
+                <div className="absolute z-40 top-0 inset-x-0 p-8 shadow-lg transition transform origin-top-right lg:hidden bg-dark">
+                    <div className="flex justify-between">
+                        <Link to="/" className="mb-16 block">
+                            <div
+                                id="nav-logo"
+                                className="text-white text-lg sm:text-2xl font-bold flex items-center prepend-primary"
+                            >
+                                <span>Tom Rolfe</span>
+                            </div>
+                        </Link>
+                        <FontAwesomeIcon
+                            icon={faBars}
+                            className="text-white hover:scale-110 transform transition text-xl"
+                            id=""
+                            onClick={() => {
+                                setMobileNavOpen(!mobileNavOpen);
+                            }}
+                        />
+                    </div>
+
+                    <div className="grid gap-y-12 pb-12">
                         {navigation.map((link) => (
                             <Link
                                 key={link.name}
@@ -62,8 +83,8 @@ export default function Navbar() {
                             </Link>
                         ))}
                     </div>
-                )}
-            </nav>
+                </div>
+            )}
         </header>
     );
 }
