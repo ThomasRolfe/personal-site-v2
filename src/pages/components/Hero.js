@@ -63,19 +63,19 @@ const Hero = (props) => {
                             <div className="mt-12 flex flex-wrap sm:block">
                                 <BrandedLink
                                     to="#what-do-i-do"
-                                    className="button bg-brand text-white invisible hover:text-dark transition w-full sm:w-auto"
+                                    className="button bg-brand text-white invisible hover:text-dark transition w-full sm:w-auto custom-hover:hover"
                                     id="featuresLink"
                                     onClick={() => {
                                         ScrollToRef(props.offeringsRef);
                                     }}
                                 >
-                                    <span className="text-shadow font-bold">
+                                    <span className="text-shadow font-bold text-dark">
                                         What can I do for you?
                                     </span>
                                 </BrandedLink>
                                 <BrandedLink
                                     to="#"
-                                    className="button button-brand-hollow mt-8 sm:mt-0 sm:ml-8 invisible transition w-full sm:w-auto font-bold "
+                                    className="button button-brand-hollow mt-8 sm:mt-0 sm:ml-8 invisible transition w-full sm:w-auto font-bold custom-hover:hover"
                                     id="portfolioLink"
                                     onClick={() => {
                                         ScrollToRef(props.portfolioRef);

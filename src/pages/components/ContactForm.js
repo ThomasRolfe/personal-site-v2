@@ -95,9 +95,9 @@ const ContactForm = (props) => {
                 {!state.submitting && !state.succeeded && (
                     <BrandedButton
                         type="submit"
-                        className="button bg-brand text-white hover:text-dark transition"
+                        className="button bg-brand hover:text-dark transition custom-hover"
                     >
-                        <span className="text-shadow font-bold">
+                        <span className="text-shadow font-bold text-dark">
                             Send message
                         </span>
                     </BrandedButton>

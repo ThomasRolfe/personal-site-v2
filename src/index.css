@@ -8,6 +8,7 @@ body {
     height: 120%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-display: swap;
     /* overflow-y: scroll; */
 }
 
@@ -206,4 +207,8 @@ html {
 
 .portfolio-text p {
     @apply my-4;
+}
+
+.custom-hover:hover {
+    box-shadow: 0 10px 30px -15px #5ecaff;
 }
