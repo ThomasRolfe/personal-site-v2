@@ -31,6 +31,7 @@ const ContactForm = (props) => {
             <input
                 type="text"
                 name="name"
+                id="name"
                 autoComplete="name"
                 className={inputClasses}
                 value={name}
@@ -49,6 +50,7 @@ const ContactForm = (props) => {
             <input
                 type="email"
                 name="email"
+                id="email"
                 autoComplete="email"
                 className={inputClasses}
                 value={email}
@@ -68,6 +70,7 @@ const ContactForm = (props) => {
             />
             <textarea
                 name="message"
+                id="message"
                 className={`${inputClasses} resize-none`}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}

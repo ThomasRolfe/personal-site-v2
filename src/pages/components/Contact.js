@@ -64,7 +64,7 @@ const Contact = (props) => {
                                 together!
                             </span>{" "}
                         </h2>
-                        <p className="mt-16 text-md xs:text-lg sm:text-xl text-gray-400 text-center lg:text-left">
+                        <p className="mt-16 text-md xs:text-lg sm:text-xl text-gray-700 text-center lg:text-left">
                             Whether you need a consultant, part time/contract
                             work or simply want to chat, get in touch with me
                             here or via the social links below.
@@ -76,7 +76,11 @@ const Contact = (props) => {
                             {socialLinks.map((item, index) => {
                                 return (
                                     <li key={index} className="mx-6 invisible">
-                                        <a target="_blank" href={item.path}>
+                                        <a
+                                            target="_blank"
+                                            href={item.path}
+                                            rel="noreferrer"
+                                        >
                                             <FontAwesomeIcon
                                                 icon={item.icon}
                                                 className="svg-hover-gradient-primary hover:scale-110 transform transition text-4xl md:text-5xl"
