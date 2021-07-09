@@ -99,7 +99,7 @@ const PortfolioCard = ({ portfolio, tags }) => {
                     <div className="text-center">
                         <BrandedLink
                             to={`/portfolio/${portfolio.slug}`}
-                            className="button button-brand-hollow mt-12 font-bold"
+                            className="button button-brand-hollow mt-12 font-bold custom-hover"
                         >
                             Read more
                         </BrandedLink>
