@@ -15,7 +15,7 @@ const Footer = (props) => {
                         <span>Tom Rolfe</span>
                     </div>
                 </Link>
-                <ul className="list-none flex gap-8 block text-gray-400">
+                <ul className="list-none flex gap-8 block text-gray-400 flex-wrap md:flex-nowrap">
                     <li>
                         <Link to="/" className="hover:text-white transition">
                             Home
@@ -37,7 +37,7 @@ const Footer = (props) => {
                             Contact
                         </Link>
                     </li>
-                    <li className="ml-auto">
+                    <li className="ml-0 md:ml-auto w-100 md:w-auto">
                         <a
                             className="text-sm text-gray-500 mt-6"
                             href="https://storyset.com/online"
