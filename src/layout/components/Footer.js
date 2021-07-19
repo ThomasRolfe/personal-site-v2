@@ -39,7 +39,7 @@ const Footer = (props) => {
                     </li>
                     <li className="ml-0 md:ml-auto w-100 md:w-auto">
                         <a
-                            className="text-sm text-gray-500 mt-6"
+                            className="text-sm text-gray-300 mt-6"
                             href="https://storyset.com/online"
                         >
                             Online illustrations by Storyset
