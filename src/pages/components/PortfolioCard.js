@@ -39,14 +39,23 @@ const PortfolioCard = ({ portfolio, tags }) => {
                         <h3 className="text-white font-bold text-xl sm:text-5xl mb-3">
                             {portfolio.title}
                         </h3>
-                        <a
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-brand hover:text-brand-light hover:underline text-sm sm:text-lg inline-block mb-5"
-                            href={portfolio.path}
-                        >
-                            {portfolio.path}
-                        </a>
+                        {portfolio.in_development ? (
+                            <>
+                                <span className="text-gray-500 hover:text-gray-400 text-sm sm:text-lg inline-block mb-5">
+                                    In development
+                                </span>
+                            </>
+                        ) : (
+                            <a
+                                target="_blank"
+                                rel="noreferrer"
+                                className="text-brand hover:text-brand-light hover:underline text-sm sm:text-lg inline-block mb-5"
+                                href={portfolio.path}
+                            >
+                                {portfolio.path}
+                            </a>
+                        )}
+
                         {portfolio.github ? (
                             <>
                                 <a
