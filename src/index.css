@@ -5,7 +5,7 @@
 
 html,
 body {
-    height: 120%;
+    /* height: 120%; */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-display: swap;

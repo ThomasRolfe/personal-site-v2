@@ -22,6 +22,7 @@ import PortfolioPost from "./pages/portfolio/PortfolioPost";
 import Contact from "./pages/contact/Contact";
 import Page404 from "./pages/Page404";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Galaxy from "./pages/galaxy/galaxy";
 
 const trackingId = "UA-120633211-4";
 
@@ -96,6 +97,7 @@ export default function App() {
                         key={key}
                     />
                 ))}
+                <Route path="/galaxy" exact component={Galaxy} />
                 <Route path="/" exact component={Home} />
                 <Route component={Page404} />
             </Switch>
