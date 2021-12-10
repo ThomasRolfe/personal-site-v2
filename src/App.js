@@ -87,6 +87,7 @@ export default function App() {
             <ScrollToTop />
 
             <Switch>
+                <Route path="/galaxy" exact component={Galaxy} />
                 {routes.map((routes, key) => (
                     <Route
                         exact
@@ -97,7 +98,6 @@ export default function App() {
                         key={key}
                     />
                 ))}
-                <Route path="/galaxy" exact component={Galaxy} />
                 <Route path="/" exact component={Home} />
                 <Route component={Page404} />
             </Switch>

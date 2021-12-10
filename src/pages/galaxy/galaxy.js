@@ -28,7 +28,10 @@ const Galaxy = () => {
             mouse.y = event.y;
         });
 
-        const positionOffset = 0;
+        // Project settings
+        let starCount = 150;
+        let backgroundStarCount = 500;
+
         let blackHole;
         let blackHoleHalo;
         let blackHoleGlow;
@@ -47,13 +50,11 @@ const Galaxy = () => {
             getRadian(x, y) {
                 this.deltaX = x - blackHole.x;
                 this.deltaY = y - blackHole.y;
-                return Math.atan2(this.deltaX, this.deltaY);
+                return Math.atan2(this.deltaY, this.deltaX);
             }
 
             mouseHasCollided(a, b, x, y, r) {
-                var dist_points =
-                    (a - (x + positionOffset)) * (a - (x + positionOffset)) +
-                    (b - y) * (b - y);
+                var dist_points = (a - x) * (a - x) + (b - y) * (b - y);
                 r *= r;
                 if (dist_points < r) {
                     return true;
@@ -72,30 +73,66 @@ const Galaxy = () => {
             }
         }
 
-        class Star extends DrawsCircle {
-            constructor(x, y, size, color, speed) {
+        class Rotates extends DrawsCircle {
+            update() {
+                if (this.isStatic) {
+                    return;
+                }
+                this.radians +=
+                    (50 / Math.abs(this.orbitRadius)) *
+                    (Math.PI / (700 * this.speed));
+                this.x =
+                    blackHole.x + this.orbitRadius * Math.cos(this.radians);
+                this.y =
+                    blackHole.y + this.orbitRadius * Math.sin(this.radians);
+
+                let orbitalDecay = (1 / this.orbitRadius) * 5;
+                this.orbitRadius -= orbitalDecay;
+
+                if (this.orbitRadius < blackHole.size) {
+                    this.color = `rgba(255,255,255, ${
+                        1 - blackHole.size / 3 / this.orbitRadius
+                    })`;
+                } else {
+                    this.color = `hsla(293, 100%, ${
+                        (300 / this.orbitRadius) * 70 + 30
+                    }%, 1)`;
+                }
+
+                if (this.orbitRadius < blackHole.size / 3) {
+                    starArray.push(generateStar());
+                    this.deleteSelf();
+                }
+            }
+
+            deleteSelf() {
+                let index = starArray.indexOf(this);
+                starArray.splice(index, 1);
+            }
+        }
+
+        class Star extends Rotates {
+            constructor(x, y, size, color, speed, isStatic = false) {
                 super();
                 this.x = x;
                 this.y = y;
                 this.originSize = size;
                 this.size = size;
+                this.isStatic = isStatic;
+                // Color should be a function of distance from black hole
                 this.originColor = color;
                 this.color = color;
                 this.radians = this.getRadian(x, y);
-                this.orbitRadius = Math.abs(this.deltaX);
+                // Orbit radius should instead be hypotenuse (enough data is provided for this)
+                this.orbitRadius = Math.max(
+                    Math.abs(this.deltaY),
+                    Math.abs(this.deltaX)
+                );
                 this.speed = speed;
                 this.isInMouse = false;
             }
-            update() {
-                this.radians +=
-                    (50 / Math.abs(this.deltaX)) *
-                    (Math.PI / (500 * this.speed));
-                this.x =
-                    blackHole.x +
-                    Math.abs(this.deltaX) * Math.cos(this.radians);
-                this.y =
-                    blackHole.y +
-                    Math.abs(this.deltaX) * Math.sin(this.radians);
+
+            checkCollisions() {
                 let mouseHasColided = this.mouseHasCollided(
                     mouse.x,
                     mouse.y,
@@ -106,12 +143,10 @@ const Galaxy = () => {
                 if (mouseHasColided) {
                     if (!this.isInMouse) {
                         this.isInMouse = true;
-                        this.color = this.getHoverColor();
-                        this.size *= 3;
+                        this.size *= 2;
                     }
                 } else {
                     this.isInMouse = false;
-                    this.color = this.originColor;
                     this.size = this.originSize;
                 }
             }
@@ -119,8 +154,8 @@ const Galaxy = () => {
 
         class BlackHoleGlow {
             constructor() {
-                this.x = canvas.width / 2 + positionOffset;
-                this.y = canvas.height / 2 + positionOffset;
+                this.x = canvas.width / 2;
+                this.y = canvas.height / 2;
                 this.size = 1000;
                 this.color = "#FFFFFF";
             }
@@ -148,7 +183,7 @@ const Galaxy = () => {
 
         class BlackHoleHalo {
             constructor() {
-                this.x = canvas.width / 2 + positionOffset;
+                this.x = canvas.width / 2;
                 this.y = canvas.height / 2;
                 this.size = 120;
                 this.color = "#FFFFFF";
@@ -181,7 +216,7 @@ const Galaxy = () => {
         class BlackHole extends DrawsCircle {
             constructor() {
                 super();
-                this.x = canvas.width / 2 + positionOffset;
+                this.x = canvas.width / 2;
                 this.y = canvas.height / 2;
                 this.size = 48;
                 this.color = "#000000";
@@ -207,30 +242,29 @@ const Galaxy = () => {
             }
         }
 
+        function generateStar() {
+            let { x, y } = randomCoordinates();
+            let speed = Math.random() + 0.2;
+            return new Star(
+                x,
+                y,
+                Math.ceil(Math.random() * 2),
+                `hsla(261, 100%, 52%, 1)`,
+                speed,
+                false
+            );
+        }
+
         function generateStarField() {
-            const starCount = 100;
             for (let i = 0; starCount > i; i++) {
-                let x = Math.random() * canvas.width;
-                let y = Math.random() * canvas.height;
-                let speed = Math.random() + 0.5;
-                starArray.push(
-                    new Star(
-                        x,
-                        y,
-                        Math.ceil(Math.random() * 2),
-                        `rgba(255,255,255, ${Math.random()})`,
-                        speed
-                    )
-                );
+                starArray.push(generateStar());
                 starArray[i].draw();
             }
         }
 
         function generateStarBackground() {
-            const starCount = 500;
-            for (let i = 0; starCount > i; i++) {
-                let x = Math.random() * (canvas.width + 500);
-                let y = Math.random() * (canvas.height + 500);
+            for (let i = 0; backgroundStarCount > i; i++) {
+                let { x, y } = randomCoordinates();
                 let speed = 1;
                 let redShift = Math.random() * 80;
                 let opacity = Math.random() * 0.8;
@@ -238,9 +272,10 @@ const Galaxy = () => {
                     new Star(
                         x,
                         y,
-                        Math.ceil(Math.random() * 2),
-                        `rgba(${42 + redShift}, 8, 224, ${opacity})`,
-                        speed
+                        Math.ceil(Math.random() * 1),
+                        `rgba(${50 + redShift}, 8, 255, ${opacity})`,
+                        speed,
+                        true
                     )
                 );
                 starBackgroundArray[i].draw();
@@ -250,8 +285,7 @@ const Galaxy = () => {
         function generatePlanetBackground() {
             const planetCount = 10;
             for (let i = 0; planetCount > i; i++) {
-                let x = Math.random() * canvas.width;
-                let y = Math.random() * canvas.height;
+                let { x, y } = randomCoordinates();
                 let speed = 1;
                 planetBackgroundArray.push(
                     new Star(
@@ -259,29 +293,39 @@ const Galaxy = () => {
                         y,
                         Math.ceil(Math.random() * 15),
                         `rgba(255, 181, 126, ${Math.random() * 0.3})`,
-                        speed
+                        speed,
+                        false
                     )
                 );
                 planetBackgroundArray[i].draw();
             }
         }
 
-        function init() {
-            // set up initial items on canvas, animate after to begin frames
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        function generateBlackHole() {
             blackHoleGlow = new BlackHoleGlow();
             blackHoleGlow.draw();
             blackHoleHalo = new BlackHoleHalo();
             blackHoleHalo.draw();
             blackHole = new BlackHole();
             blackHole.draw();
+        }
+
+        function randomCoordinates() {
+            let x = Math.random() * canvas.width;
+            let y = Math.random() * canvas.height;
+            return {
+                x,
+                y,
+            };
+        }
+
+        function init() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            generateBlackHole();
             generateStarBackground();
             generatePlanetBackground();
             generateStarField();
-            // Add a white circle to the center of the canvas
-            // Add some particles around the page (static)
-            // work how how to move them rotating around center point
-
             animate();
         }
 
@@ -298,6 +342,7 @@ const Galaxy = () => {
             blackHole.draw();
             for (let i = 0; starArray.length > i; i++) {
                 starArray[i].update();
+                starArray[i].checkCollisions();
                 starArray[i].draw();
             }
             requestAnimationFrame(animate);
