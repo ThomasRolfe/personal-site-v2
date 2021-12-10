@@ -4,6 +4,7 @@ import {
     Route,
     BrowserRouter as Router,
     useLocation,
+    Redirect,
 } from "react-router-dom";
 import ReactGA from "react-ga";
 import ScrollToTop from "./components/helpers/ScrollToTop";
@@ -104,7 +105,8 @@ export default function App() {
                     />
                 ))}
                 <Route path="/" exact component={Home} />
-                <Route component={Page404} />
+                <Route path="/404" component={Page404} />
+                <Redirect to="/404" />
             </Switch>
         </Router>
     );
