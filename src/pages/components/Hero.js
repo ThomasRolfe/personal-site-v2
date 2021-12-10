@@ -53,7 +53,7 @@ const Hero = (props) => {
                                 id="mainHeading"
                             >
                                 Full Stack <br />
-                                Web Development
+                                Web Development.
                             </h1>
                             <p
                                 className="text-gray-400 text-lg mt-12 max-w-3xl invisible"

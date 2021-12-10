@@ -87,7 +87,12 @@ export default function App() {
             <ScrollToTop />
 
             <Switch>
-                <Route path="/galaxy" exact component={Galaxy} />
+                <Route
+                    path={`/galaxy`}
+                    render={() => {
+                        return <Galaxy />;
+                    }}
+                />
                 {routes.map((routes, key) => (
                     <Route
                         exact
