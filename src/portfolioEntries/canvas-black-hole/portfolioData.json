@@ -1,0 +1,14 @@
+{
+    "title": "Canvas Black Hole",
+    "slug": "canvas-black-hole",
+    "in_development": false,
+    "description": "<p>Built as an experiment to learn more about HTML Canvas. Includes randomly generated background and stars with varying orbital speeds. Orbital speed decays with proximity to the black hole and eventually is swallowed up, producing a new star to keep a continuous loop of stars.</p><p>Currently this will only work on desktop browsers</p>",
+    "short_description": "An experiment to explore the capabilities of HTML canvas & Javascript.",
+    "path": "https://tomrolfe.co.uk/galaxy",
+    "github": "https://github.com/ThomasRolfe/galaxy-canvas",
+    "featured_images": [
+        "black-hole-portfolio image.jpg",
+        "black-hole-portfolio image2.jpg"
+    ],
+    "tags": [{ "label": "Javascript" }, { "label": "Canvas" }]
+}

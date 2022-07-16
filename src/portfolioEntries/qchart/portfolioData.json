@@ -1,0 +1,16 @@
+{
+    "title": "Qchart",
+    "slug": "qchart-co-uk",
+    "in_development": true,
+    "description": "<p>Qchart is a freemium web app allowing users to enter or upload their own data and produce great looking charts instantly. This spawned from my need to create charts quickly for sales meetings and presentations without having access to a program such as Microsoft Excel or not having the time to create something visually appealing.</p><p>There were some services available online but they didn't offer much customisation and often required payment for basic features. The AM charts library was the perfect fit for this, allowing great looking charts out of the box, far beyond the type of chart that can be produced in Excel without a lot of customisation and know-how.</p><p>The site is built primarily with React and TailwindCSS with TailwindUI components for the dashboard interface. Laravel is used for the backend using the sanctum and fortify packages to provide cookie based authentication for user registration and chart saving.</p><p>Paid features are in the works with areas of the site limited by a paywall and a Stripe checkout integration will be used to allow users to pay a monthly fee for more advanced charts and features.</p>",
+    "short_description": "Qchart allows users to create beautiful charts and graphs for free online. Utilising the AMcharts library, a selection of different chart types are available with a range of customisations and data import options.",
+    "path": "https://qchart.co.uk",
+    "github": "",
+    "featured_images": ["qchart-cover.jpg", "pie-chart-create.jpg"],
+    "tags": [
+        { "label": "Laravel" },
+        { "label": "React" },
+        { "label": "Tailwind CSS" },
+        { "label": "AM Charts" }
+    ]
+}

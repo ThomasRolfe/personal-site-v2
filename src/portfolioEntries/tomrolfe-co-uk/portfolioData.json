@@ -1,0 +1,15 @@
+{
+    "title": "Tomrolfe.co.uk",
+    "slug": "tomrolfe-co-uk",
+    "in_development": false,
+    "description": "<p>My own portfolio and what you are looking at now! I created this website to of course advertise my services and skills but also used it as an opportunity to work on my React and animation skills. The website is bootstrapped with create-react-app and makes use of Tailwind CSS for the majority of the styling and react Helmet for meta tags.</p><p>Strapi CMS is used as a headless CMS for storing portfolio content to be queried on the front end. GSAP powers the animations across the website and is more/less animated based on screen size.</p><p>The site is deployed using Node/Express JS on a DigitalOcean droplet via Plesk and the codebase is coordinated between my local environment and production using Github.</p>",
+    "short_description": "You are here! Every developer needs their own website and so I used this as a testing ground to progress with React in addition to delving into GSAP animation & a dark colour theme.",
+    "path": "https://tomrolfe.co.uk",
+    "github": "https://github.com/ThomasRolfe/personal-site-v2",
+    "featured_images": ["tomrolfe hero.jpg", "tomrolfe-input-item.jpg"],
+    "tags": [
+        { "label": "React" },
+        { "label": "Tailwind CSS" },
+        { "label": "GSAP" }
+    ]
+}

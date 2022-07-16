@@ -1,0 +1,18 @@
+{
+    "title": "A1GuitarTuition.co.uk",
+    "slug": "a1-guitar-tuition-co-uk",
+    "in_development": false,
+    "description": "<p>A1 Guitar Tuition is a private guitar tuition company which needed to replace their existing ageing website, built nearly 20 years ago. The client had existing copy and required an easy to maintain, modern design. WordPress was used along with the Divi plugin to create a fresh new look with the ability to allow potential clients to easily get in touch.</p><p>In addition to the website build, a logo was required and with input from the clients ideas, I created a musically themed type logo using Adobe Illustrator that would be suitable at all sizes as a hero image, favicon and business card image.</p>",
+    "short_description": "A1 Guitar Tuition is a website for a client designed to advertise their services as a guitar tutor for both online and in person lessons. Using Wordpress and the Divi page builder allowed for quick development and iteration.",
+    "path": "https://a1guitartuition.com",
+    "github": "",
+    "featured_images": [
+        "a1-guitar-tuition-hero.jpg",
+        "aq-guitar-equipment.jpg"
+    ],
+    "tags": [
+        { "label": "Wordpress" },
+        { "label": "Divi" },
+        { "label": "Adobe CC" }
+    ]
+}

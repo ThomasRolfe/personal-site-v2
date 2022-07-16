@@ -1,14 +1,24 @@
-import React, { useEffect, useRef, useContext } from "react";
+import React, { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { DataContext } from "../../context/DataContext";
 import PublicLayout from "../../layout/PublicLayout";
 import Contact from "../components/Contact";
 import ClipSlant from "../components/ClipSlant";
+import personalSite from "../../portfolioEntries/tomrolfe-co-uk/portfolioData.json";
+import interestCalculator from "../../portfolioEntries/interestcalculator-co-uk/portfolioData.json";
+import blackHole from "../../portfolioEntries/canvas-black-hole/portfolioData.json";
+import a1Guitar from "../../portfolioEntries/a1guitar-co-uk/portfolioData.json";
+import qchart from "../../portfolioEntries/qchart/portfolioData.json";
 
 const PortfolioPost = (props) => {
-    const { portfolios, tags } = useContext(DataContext);
     const slug = props.match.params.slug;
+    const portfolios = [
+        blackHole,
+        qchart,
+        personalSite,
+        a1Guitar,
+        interestCalculator,
+    ];
     const portfolio = portfolios.find((item) => item.slug === slug);
 
     const ref = useRef(null);
@@ -79,7 +89,7 @@ const PortfolioPost = (props) => {
                                     <img
                                         alt=""
                                         className="rounded-md mt-8"
-                                        src={`${process.env.REACT_APP_API_URL}${portfolio.featured_images[0].url}`}
+                                        src={`/images/${portfolio.featured_images[0]}`}
                                     ></img>
                                 </div>
                                 <div className="flex flex-col justify-center">

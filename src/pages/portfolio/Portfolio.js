@@ -1,22 +1,29 @@
-import React, { useEffect, useRef, useContext } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { DataContext } from "../../context/DataContext";
 import PortfolioCard from "../components/PortfolioCard";
 import PublicLayout from "../../layout/PublicLayout";
 import Contact from "../components/Contact";
 import ClipSlant from "../components/ClipSlant";
+import personalSite from "../../portfolioEntries/tomrolfe-co-uk/portfolioData.json";
+import interestCalculator from "../../portfolioEntries/interestcalculator-co-uk/portfolioData.json";
+import blackHole from "../../portfolioEntries/canvas-black-hole/portfolioData.json";
+import a1Guitar from "../../portfolioEntries/a1guitar-co-uk/portfolioData.json";
+import qchart from "../../portfolioEntries/qchart/portfolioData.json";
 
 const Portfolio = (props) => {
-    const { portfolios, tags } = useContext(DataContext);
+    const portfolios = [
+        blackHole,
+        qchart,
+        personalSite,
+        a1Guitar,
+        interestCalculator,
+    ];
 
     gsap.registerPlugin(ScrollTrigger);
     const ref = useRef(null);
 
     useEffect(() => {
-        if (!portfolios) {
-            return;
-        }
         const element = ref.current;
         const cards = gsap.utils.toArray(
             element.querySelectorAll(".portfolioCard")
@@ -59,7 +66,7 @@ const Portfolio = (props) => {
             }
         );
         ScrollTrigger.refresh(true);
-    }, [portfolios]);
+    }, []);
 
     return (
         <PublicLayout>
@@ -78,11 +85,7 @@ const Portfolio = (props) => {
                     </h2>
                     {portfolios.map((portfolio, index) => {
                         return (
-                            <PortfolioCard
-                                key={index}
-                                portfolio={portfolio}
-                                tags={tags}
-                            />
+                            <PortfolioCard key={index} portfolio={portfolio} />
                         );
                     })}
                 </div>

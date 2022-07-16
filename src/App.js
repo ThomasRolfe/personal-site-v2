@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React from "react";
 import {
     Switch,
     Route,
@@ -8,9 +8,6 @@ import {
 } from "react-router-dom";
 import ReactGA from "react-ga";
 import ScrollToTop from "./components/helpers/ScrollToTop";
-import { DataContext } from "./context/DataContext";
-import { GetPortfolioPosts } from "./services/api/portfolios";
-import { GetTags } from "./services/api/tags";
 import {
     FireGradient,
     GreyGradient,
@@ -22,7 +19,6 @@ import Portfolio from "./pages/portfolio/Portfolio";
 import PortfolioPost from "./pages/portfolio/PortfolioPost";
 import Contact from "./pages/contact/Contact";
 import Page404 from "./pages/Page404";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Galaxy from "./pages/galaxy/galaxy";
 
 const trackingId = "UA-120633211-4";
@@ -58,27 +54,9 @@ const routes = [
 ];
 
 export default function App() {
-    const { setPortfolios, setTags } = useContext(DataContext);
-
     usePageViews();
 
     ReactGA.initialize(trackingId);
-
-    useEffect(() => {
-        GetPortfolioPosts().then((response) => {
-            setPortfolios(
-                response.data.sort((a, b) => {
-                    return a.order < b.order ? -1 : a.order > b.order ? 1 : 0;
-                })
-            );
-            ScrollTrigger.refresh();
-        });
-
-        GetTags().then((response) => {
-            setTags(response.data);
-            ScrollTrigger.refresh();
-        });
-    }, [setPortfolios, setTags]);
 
     return (
         <Router>

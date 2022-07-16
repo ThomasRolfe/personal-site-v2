@@ -5,7 +5,7 @@ import BrandedLink from "../../components/buttons/BrandedLink";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const PortfolioCard = ({ portfolio, tags }) => {
+const PortfolioCard = ({ portfolio }) => {
     gsap.registerPlugin(ScrollTrigger);
     const ref = useRef(null);
 
@@ -94,7 +94,7 @@ const PortfolioCard = ({ portfolio, tags }) => {
                                 <img
                                     alt=""
                                     className="rounded-md"
-                                    src={`${process.env.REACT_APP_API_URL}${portfolio.featured_images[0].url}`}
+                                    src={`/images/${portfolio.featured_images[0]}`}
                                 ></img>
                             </div>
                         </div>
@@ -122,7 +122,7 @@ const PortfolioCard = ({ portfolio, tags }) => {
                                     key={index}
                                     alt=""
                                     className="rounded-lg"
-                                    src={`${process.env.REACT_APP_API_URL}${image.url}`}
+                                    src={`/images/${image}`}
                                 ></img>
                             );
                         })}

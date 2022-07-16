@@ -3,11 +3,9 @@ import BrandedLink from "../../components/buttons/BrandedLink";
 import { gsap } from "gsap";
 import HeroIllustration from "./HeroIllustration";
 import ScrollToRef from "../../components/helpers/ScrollToRef";
-import HeroCanvas from "./HeroCanvas";
 
 const Hero = (props) => {
     const ref = useRef(null);
-    const canvasRef = useRef(null);
 
     useEffect(() => {
         const element = ref.current;
