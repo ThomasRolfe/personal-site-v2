@@ -14,10 +14,10 @@ const PortfolioPost = (props) => {
     const slug = props.match.params.slug;
     const portfolios = [
         blackHole,
-        qchart,
-        personalSite,
-        a1Guitar,
         interestCalculator,
+        a1Guitar,
+        personalSite,
+        qchart,
     ];
     const portfolio = portfolios.find((item) => item.slug === slug);
 

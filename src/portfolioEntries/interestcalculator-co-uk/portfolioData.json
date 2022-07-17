@@ -1,14 +1,14 @@
 {
-    "title": "Interest-calculator.co.uk",
-    "slug": "interest-calculator-co-uk",
+    "title": "Interest-calculator",
+    "slug": "interest-calculator",
     "in_development": false,
-    "description": "<p>The interest calculator was built to demonstrate the power of compound interest and highlight how much of a difference a small increase in interest rates can provide over a long period of time.</p><p>The site was built with PHP with requests for calculations being made with jQuery to a PHP backend. The returned data then creates a graph with the Chart JS library to give a visual representation of the different in savings in an easy to consume way.</p><p>For SEO purposes, I put together an extensive 'about' page with an explanation of how compound interest is calculated.</p>",
+    "description": "<p>The interest calculator was built to demonstrate the power of compound interest and highlight how much of a difference a small increase in interest rates can provide over a long period of time.</p><p>The site was built with Next JS with requests for calculations being made to a Next JS api endpoint. The returned data then creates charts with the AM charts library to give a visual representation of the different in savings in an easy to consume way.</p><p>For SEO purposes, I put together an extensive 'about' page with an explanation of how compound interest is calculated.</p>",
     "short_description": "Interest calculator was created to help illustrate the power of compound interest in an easy to use manner. In order to highlight the difference in savings that a small increase in APR % can make.",
-    "path": "https://interest-calculator.co.uk/",
+    "path": "https://interest-calculator.tomrolfe.co.uk",
     "github": "",
     "featured_images": [
-        "interest-calculator-hero-section.jpg",
-        "interest-calculator-results-section.jpg"
+        "interest-calculator-hero.jpg",
+        "interest-calculator-graphs.jpg"
     ],
-    "tags": [{ "label": "PHP" }, { "label": "jQuery" }, { "label": "ChartJS" }]
+    "tags": [{ "label": "NextJS" }, { "label": "AM Charts" }]
 }

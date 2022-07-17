@@ -9,16 +9,15 @@ import personalSite from "../../portfolioEntries/tomrolfe-co-uk/portfolioData.js
 import interestCalculator from "../../portfolioEntries/interestcalculator-co-uk/portfolioData.json";
 import blackHole from "../../portfolioEntries/canvas-black-hole/portfolioData.json";
 import a1Guitar from "../../portfolioEntries/a1guitar-co-uk/portfolioData.json";
-
 import qchart from "../../portfolioEntries/qchart/portfolioData.json";
 
 const Portfolio = (props) => {
     const portfolios = [
         blackHole,
-        qchart,
-        personalSite,
-        a1Guitar,
         interestCalculator,
+        a1Guitar,
+        personalSite,
+        qchart,
     ];
 
     gsap.registerPlugin(ScrollTrigger);

@@ -11,10 +11,10 @@ import qchart from "../../portfolioEntries/qchart/portfolioData.json";
 const Portfolio = (props) => {
     const portfolios = [
         blackHole,
-        qchart,
-        personalSite,
-        a1Guitar,
         interestCalculator,
+        a1Guitar,
+        personalSite,
+        qchart,
     ];
 
     gsap.registerPlugin(ScrollTrigger);
