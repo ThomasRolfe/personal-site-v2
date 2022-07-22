@@ -8,7 +8,11 @@
     "github": "",
     "featured_images": [
         "interest-calculator-hero.jpg",
-        "interest-calculator-graphs.jpg"
+        "interest-calculator-content.jpg"
     ],
-    "tags": [{ "label": "NextJS" }, { "label": "AM Charts" }]
+    "tags": [
+        { "label": "NextJS" },
+        { "label": "TypeScript" },
+        { "label": "AM Charts" }
+    ]
 }
